@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "title": "AI 기반 자동화로 비즈니스를 혁신하세요",
+    "subtitle": "최첨단 솔루션으로 운영을 간소화하고, 생산성을 향상시키며, 성장을 촉진하세요",
+    "cta": {
+      "primary": "무료로 시작하기",
+      "secondary": "데모 보기"
+    }
+  },
+  "features": {
+    "title": "현대 비즈니스를 위한 강력한 기능",
+    "subtitle": "워크플로우 자동화와 최적화에 필요한 모든 것",
+    "items": {
+      "aiAutomation": {
+        "title": "AI 기반 자동화",
+        "description": "직관적인 드래그 앤 드롭 인터페이스로 손쉽게 워크플로우 생성"
+      },
+      "integrations": {
+        "title": "원활한 통합",
+        "description": "자주 사용하는 도구와 플랫폼을 원활하게 연결"
+      },
+      "smartWorkflows": {
+        "title": "스마트 워크플로우",
+        "description": "조건부 로직과 AI 의사결정으로 복잡한 자동화 흐름 구축"
+      },
+      "analytics": {
+        "title": "실시간 분석",
+        "description": "상세한 성과 인사이트로 워크플로우 모니터링 및 최적화"
+      }
+    }
+  },
+  "useCases": {
+    "title": "모든 산업을 위한 솔루션",
+    "subtitle": "Send AI Companion이 귀사의 산업을 어떻게 혁신할 수 있는지 확인하세요",
+    "industries": {
+      "hr": {
+        "title": "인사관리",
+        "description": "온보딩, 평가, 직원 관리 간소화"
+      },
+      "healthcare": {
+        "title": "의료",
+        "description": "환자 케어와 의료 워크플로우 향상"
+      },
+      "ecommerce": {
+        "title": "이커머스",
+        "description": "쇼핑 경험 개인화 및 지원 자동화"
+      },
+      "realEstate": {
+        "title": "부동산",
+        "description": "매물 리스트와 가상 투어 관리 자동화"
+      },
+      "fitness": {
+        "title": "피트니스 & 웰니스",
+        "description": "맞춤형 운동 및 영양 계획 생성"
+      }
+    }
+  },
+  "about": {
+    "title": "우리의 미션",
+    "subtitle": "지능형 자동화로 비즈니스를 강화하고, AI를 모두가 접근 가능하고 실용적으로 만듭니다",
+    "story": {
+      "title": "우리의 이야기",
+      "content": "2023년에 설립된 Send AI Companion은 단순한 관찰에서 시작되었습니다: 기업들은 AI의 힘을 활용할 더 나은 방법이 필요했습니다."
+    },
+    "values": {
+      "title": "우리의 가치",
+      "items": {
+        "customerFirst": {
+          "title": "고객 우선",
+          "description": "모든 활동의 중심에 고객을 둡니다"
+        },
+        "innovation": {
+          "title": "혁신",
+          "description": "최첨단 AI 솔루션을 제공하기 위해 끊임없이 경계를 넓힙니다"
+        },
+        "trust": {
+          "title": "신뢰와 보안",
+          "description": "보안과 윤리적 AI 실천의 최고 기준을 유지합니다"
+        },
+        "efficiency": {
+          "title": "효율성",
+          "description": "복잡한 워크플로우를 단순하고 효율적으로 만듭니다"
+        }
+      }
+    }
+  }
+}

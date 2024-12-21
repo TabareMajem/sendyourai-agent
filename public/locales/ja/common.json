@@ -1,0 +1,53 @@
+{
+  "navigation": {
+    "features": "機能",
+    "useCases": "ユースケース",
+    "industries": "業界",
+    "pricing": "料金",
+    "login": "ログイン",
+    "getStarted": "無料で始める"
+  },
+  "hero": {
+    "title": "AIパワードの自動化でワークフローを進化させる",
+    "subtitle": "あなたの業界に合わせたシームレスな自動化を体験",
+    "cta": {
+      "primary": "無料で始める",
+      "secondary": "デモを見る"
+    }
+  },
+  "dashboard": {
+    "title": "ダッシュボード",
+    "overview": "概要",
+    "workflows": "ワークフロー",
+    "integrations": "連携",
+    "analytics": "分析",
+    "settings": "設定"
+  },
+  "workflows": {
+    "create": "ワークフロー作成",
+    "edit": "ワークフロー編集",
+    "delete": "ワークフロー削除",
+    "status": {
+      "active": "アクティブ",
+      "inactive": "非アクティブ",
+      "error": "エラー"
+    }
+  },
+  "integrations": {
+    "connect": "連携する",
+    "configure": "設定",
+    "disconnect": "連携解除",
+    "status": {
+      "connected": "接続済み",
+      "disconnected": "未接続",
+      "error": "エラー"
+    }
+  },
+  "footer": {
+    "product": "製品",
+    "company": "会社",
+    "resources": "リソース",
+    "legal": "法的情報",
+    "copyright": "© {{year}} Send AI Companion. All rights reserved."
+  }
+}

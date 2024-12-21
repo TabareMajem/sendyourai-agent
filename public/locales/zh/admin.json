@@ -1,0 +1,50 @@
+{
+  "dashboard": {
+    "title": "管理控制台",
+    "overview": "概览",
+    "stats": {
+      "totalUsers": "总用户数",
+      "monthlyRevenue": "月收入",
+      "activeApiKeys": "活跃API密钥",
+      "systemUptime": "系统运行时间"
+    }
+  },
+  "users": {
+    "management": "用户管理",
+    "addUser": "添加用户",
+    "searchUsers": "搜索用户...",
+    "columns": {
+      "name": "姓名",
+      "email": "邮箱",
+      "role": "角色",
+      "status": "状态",
+      "lastLogin": "最后登录",
+      "actions": "操作"
+    }
+  },
+  "apiKeys": {
+    "title": "API密钥",
+    "create": "创建API密钥",
+    "keyName": "密钥名称",
+    "created": "创建时间",
+    "lastUsed": "最后使用",
+    "actions": {
+      "copy": "复制",
+      "delete": "删除",
+      "regenerate": "重新生成"
+    }
+  },
+  "system": {
+    "health": "系统健康",
+    "metrics": {
+      "cpu": "CPU使用率",
+      "memory": "内存使用率",
+      "storage": "存储使用率"
+    },
+    "status": {
+      "healthy": "健康",
+      "warning": "警告",
+      "error": "错误"
+    }
+  }
+}

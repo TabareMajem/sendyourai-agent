@@ -1,0 +1,38 @@
+{
+  "creator": {
+    "title": "工作流创建器",
+    "components": {
+      "triggers": "触发器",
+      "actions": "动作",
+      "conditions": "条件"
+    },
+    "toolbar": {
+      "save": "保存",
+      "test": "测试",
+      "deploy": "部署",
+      "undo": "撤销",
+      "redo": "重做"
+    }
+  },
+  "management": {
+    "title": "工作流管理",
+    "filters": {
+      "search": "搜索工作流...",
+      "status": "状态",
+      "tags": "标签",
+      "dateRange": "日期范围"
+    },
+    "actions": {
+      "create": "创建工作流",
+      "edit": "编辑",
+      "delete": "删除",
+      "duplicate": "复制"
+    }
+  },
+  "details": {
+    "overview": "概览",
+    "execution": "执行历史",
+    "settings": "设置",
+    "analytics": "分析"
+  }
+}

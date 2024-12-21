@@ -1,0 +1,38 @@
+{
+  "creator": {
+    "title": "ワークフロー作成",
+    "components": {
+      "triggers": "トリガー",
+      "actions": "アクション",
+      "conditions": "条件"
+    },
+    "toolbar": {
+      "save": "保存",
+      "test": "テスト",
+      "deploy": "デプロイ",
+      "undo": "元に戻す",
+      "redo": "やり直し"
+    }
+  },
+  "management": {
+    "title": "ワークフロー管理",
+    "filters": {
+      "search": "ワークフローを検索...",
+      "status": "ステータス",
+      "tags": "タグ",
+      "dateRange": "期間"
+    },
+    "actions": {
+      "create": "ワークフロー作成",
+      "edit": "編集",
+      "delete": "削除",
+      "duplicate": "複製"
+    }
+  },
+  "details": {
+    "overview": "概要",
+    "execution": "実行履歴",
+    "settings": "設定",
+    "analytics": "分析"
+  }
+}

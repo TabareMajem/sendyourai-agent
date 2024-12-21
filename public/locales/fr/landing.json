@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "title": "Transformez Votre Entreprise avec l'Automatisation Alimentée par l'IA",
+    "subtitle": "Optimisez les opérations, améliorez la productivité et stimulez la croissance avec nos solutions de pointe",
+    "cta": {
+      "primary": "Commencer Gratuitement",
+      "secondary": "Voir la Démo"
+    }
+  },
+  "features": {
+    "title": "Fonctionnalités Puissantes pour les Entreprises Modernes",
+    "subtitle": "Tout ce dont vous avez besoin pour automatiser et optimiser vos flux de travail",
+    "items": {
+      "aiAutomation": {
+        "title": "Automatisation par IA",
+        "description": "Créez facilement des flux de travail personnalisés avec notre interface intuitive de glisser-déposer"
+      },
+      "integrations": {
+        "title": "Intégrations Transparentes",
+        "description": "Connectez-vous facilement avec vos outils et plateformes préférés"
+      },
+      "smartWorkflows": {
+        "title": "Flux de Travail Intelligents",
+        "description": "Construisez des flux d'automatisation complexes avec logique conditionnelle et prise de décision IA"
+      },
+      "analytics": {
+        "title": "Analyses en Temps Réel",
+        "description": "Surveillez et optimisez vos flux de travail avec des insights détaillés sur les performances"
+      }
+    }
+  },
+  "useCases": {
+    "title": "Solutions pour Chaque Industrie",
+    "subtitle": "Découvrez comment Send AI Companion peut transformer votre industrie spécifique",
+    "industries": {
+      "hr": {
+        "title": "Ressources Humaines",
+        "description": "Optimisez l'intégration, les évaluations et la gestion des employés"
+      },
+      "healthcare": {
+        "title": "Santé",
+        "description": "Améliorez les soins aux patients et les flux de travail médicaux"
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "Personnalisez les expériences d'achat et automatisez le support"
+      },
+      "realEstate": {
+        "title": "Immobilier",
+        "description": "Automatisez les annonces et la gestion des visites virtuelles"
+      },
+      "fitness": {
+        "title": "Fitness et Bien-être",
+        "description": "Créez des plans personnalisés d'entraînement et de nutrition"
+      }
+    }
+  },
+  "about": {
+    "title": "Notre Mission",
+    "subtitle": "Donner aux entreprises les moyens d'utiliser l'automatisation intelligente, rendant l'IA accessible et pratique pour tous",
+    "story": {
+      "title": "Notre Histoire",
+      "content": "Fondée en 2023, Send AI Companion est née d'une simple observation : les entreprises avaient besoin d'une meilleure façon d'exploiter la puissance de l'IA."
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "items": {
+        "customerFirst": {
+          "title": "Client d'Abord",
+          "description": "Nous plaçons nos clients au cœur de tout ce que nous faisons"
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "Nous repoussons constamment les limites pour fournir des solutions IA de pointe"
+        },
+        "trust": {
+          "title": "Confiance et Sécurité",
+          "description": "Nous maintenons les plus hauts standards de sécurité et de pratiques éthiques en IA"
+        },
+        "efficiency": {
+          "title": "Efficacité",
+          "description": "Nous nous efforçons de rendre les flux de travail complexes simples et efficaces"
+        }
+      }
+    }
+  }
+}

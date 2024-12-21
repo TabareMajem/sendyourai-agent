@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "title": "Transforme su Negocio con Automatización Impulsada por IA",
+    "subtitle": "Optimice operaciones, mejore la productividad e impulse el crecimiento con nuestras soluciones de vanguardia",
+    "cta": {
+      "primary": "Comenzar Gratis",
+      "secondary": "Ver Demo"
+    }
+  },
+  "features": {
+    "title": "Funciones Potentes para Negocios Modernos",
+    "subtitle": "Todo lo que necesita para automatizar y optimizar sus flujos de trabajo",
+    "items": {
+      "aiAutomation": {
+        "title": "Automatización con IA",
+        "description": "Cree flujos de trabajo personalizados fácilmente con nuestra interfaz intuitiva de arrastrar y soltar"
+      },
+      "integrations": {
+        "title": "Integraciones Perfectas",
+        "description": "Conéctese sin problemas con sus herramientas y plataformas favoritas"
+      },
+      "smartWorkflows": {
+        "title": "Flujos de Trabajo Inteligentes",
+        "description": "Construya flujos de automatización complejos con lógica condicional y toma de decisiones por IA"
+      },
+      "analytics": {
+        "title": "Análisis en Tiempo Real",
+        "description": "Monitoree y optimice sus flujos de trabajo con información detallada sobre el rendimiento"
+      }
+    }
+  },
+  "useCases": {
+    "title": "Soluciones para Cada Industria",
+    "subtitle": "Descubra cómo Send AI Companion puede transformar su industria específica",
+    "industries": {
+      "hr": {
+        "title": "Recursos Humanos",
+        "description": "Optimice la incorporación, revisiones y gestión de empleados"
+      },
+      "healthcare": {
+        "title": "Salud",
+        "description": "Mejore la atención al paciente y los flujos de trabajo médicos"
+      },
+      "ecommerce": {
+        "title": "Comercio Electrónico",
+        "description": "Personalice experiencias de compra y automatice el soporte"
+      },
+      "realEstate": {
+        "title": "Bienes Raíces",
+        "description": "Automatice listados y gestión de tours virtuales"
+      },
+      "fitness": {
+        "title": "Fitness y Bienestar",
+        "description": "Cree planes personalizados de entrenamiento y nutrición"
+      }
+    }
+  },
+  "about": {
+    "title": "Nuestra Misión",
+    "subtitle": "Empoderar a las empresas con automatización inteligente, haciendo la IA accesible y práctica para todos",
+    "story": {
+      "title": "Nuestra Historia",
+      "content": "Fundada en 2023, Send AI Companion surgió de una simple observación: las empresas necesitaban una mejor manera de aprovechar el poder de la IA."
+    },
+    "values": {
+      "title": "Nuestros Valores",
+      "items": {
+        "customerFirst": {
+          "title": "Cliente Primero",
+          "description": "Ponemos a nuestros clientes en el centro de todo lo que hacemos"
+        },
+        "innovation": {
+          "title": "Innovación",
+          "description": "Constantemente superamos límites para ofrecer soluciones de IA de vanguardia"
+        },
+        "trust": {
+          "title": "Confianza y Seguridad",
+          "description": "Mantenemos los más altos estándares de seguridad y prácticas éticas de IA"
+        },
+        "efficiency": {
+          "title": "Eficiencia",
+          "description": "Nos esforzamos por hacer simples y eficientes los flujos de trabajo complejos"
+        }
+      }
+    }
+  }
+}

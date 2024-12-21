@@ -1,0 +1,50 @@
+{
+  "dashboard": {
+    "title": "管理ダッシュボード",
+    "overview": "概要",
+    "stats": {
+      "totalUsers": "総ユーザー数",
+      "monthlyRevenue": "月間収益",
+      "activeApiKeys": "アクティブなAPIキー",
+      "systemUptime": "システム稼働時間"
+    }
+  },
+  "users": {
+    "management": "ユーザー管理",
+    "addUser": "ユーザーを追加",
+    "searchUsers": "ユーザーを検索...",
+    "columns": {
+      "name": "名前",
+      "email": "メールアドレス",
+      "role": "役割",
+      "status": "ステータス",
+      "lastLogin": "最終ログイン",
+      "actions": "アクション"
+    }
+  },
+  "apiKeys": {
+    "title": "APIキー",
+    "create": "APIキーを作成",
+    "keyName": "キー名",
+    "created": "作成日",
+    "lastUsed": "最終使用日",
+    "actions": {
+      "copy": "コピー",
+      "delete": "削除",
+      "regenerate": "再生成"
+    }
+  },
+  "system": {
+    "health": "システム状態",
+    "metrics": {
+      "cpu": "CPU使用率",
+      "memory": "メモリ使用率",
+      "storage": "ストレージ使用率"
+    },
+    "status": {
+      "healthy": "正常",
+      "warning": "警告",
+      "error": "エラー"
+    }
+  }
+}

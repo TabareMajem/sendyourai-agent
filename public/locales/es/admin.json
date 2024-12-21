@@ -1,0 +1,50 @@
+{
+  "dashboard": {
+    "title": "Panel de Administración",
+    "overview": "Resumen",
+    "stats": {
+      "totalUsers": "Total de Usuarios",
+      "monthlyRevenue": "Ingresos Mensuales",
+      "activeApiKeys": "Claves API Activas",
+      "systemUptime": "Tiempo de Actividad"
+    }
+  },
+  "users": {
+    "management": "Gestión de Usuarios",
+    "addUser": "Añadir Usuario",
+    "searchUsers": "Buscar usuarios...",
+    "columns": {
+      "name": "Nombre",
+      "email": "Correo",
+      "role": "Rol",
+      "status": "Estado",
+      "lastLogin": "Último Acceso",
+      "actions": "Acciones"
+    }
+  },
+  "apiKeys": {
+    "title": "Claves API",
+    "create": "Crear Clave API",
+    "keyName": "Nombre de la Clave",
+    "created": "Creada",
+    "lastUsed": "Último Uso",
+    "actions": {
+      "copy": "Copiar",
+      "delete": "Eliminar",
+      "regenerate": "Regenerar"
+    }
+  },
+  "system": {
+    "health": "Estado del Sistema",
+    "metrics": {
+      "cpu": "Uso de CPU",
+      "memory": "Uso de Memoria",
+      "storage": "Uso de Almacenamiento"
+    },
+    "status": {
+      "healthy": "Saludable",
+      "warning": "Advertencia",
+      "error": "Error"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "navigation": {
+    "features": "Features",
+    "useCases": "Use Cases",
+    "industries": "Industries",
+    "pricing": "Pricing",
+    "login": "Log In",
+    "getStarted": "Get Started Free"
+  },
+  "hero": {
+    "title": "Automate and Elevate Your Workflow with AI-Powered Proactivity",
+    "subtitle": "Experience seamless automation tailored to your industry",
+    "cta": {
+      "primary": "Get Started Free",
+      "secondary": "See It In Action"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "overview": "Overview",
+    "workflows": "Workflows",
+    "integrations": "Integrations",
+    "analytics": "Analytics",
+    "settings": "Settings"
+  },
+  "workflows": {
+    "create": "Create Workflow",
+    "edit": "Edit Workflow",
+    "delete": "Delete Workflow",
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "error": "Error"
+    }
+  },
+  "integrations": {
+    "connect": "Connect Integration",
+    "configure": "Configure",
+    "disconnect": "Disconnect",
+    "status": {
+      "connected": "Connected",
+      "disconnected": "Disconnected",
+      "error": "Error"
+    }
+  },
+  "footer": {
+    "product": "Product",
+    "company": "Company",
+    "resources": "Resources",
+    "legal": "Legal",
+    "copyright": "© {{year}} Send AI Companion. All rights reserved."
+  }
+}

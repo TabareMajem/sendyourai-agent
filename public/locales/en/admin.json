@@ -1,0 +1,50 @@
+{
+  "dashboard": {
+    "title": "Admin Dashboard",
+    "overview": "Overview",
+    "stats": {
+      "totalUsers": "Total Users",
+      "monthlyRevenue": "Monthly Revenue",
+      "activeApiKeys": "Active API Keys",
+      "systemUptime": "System Uptime"
+    }
+  },
+  "users": {
+    "management": "User Management",
+    "addUser": "Add User",
+    "searchUsers": "Search users...",
+    "columns": {
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "status": "Status",
+      "lastLogin": "Last Login",
+      "actions": "Actions"
+    }
+  },
+  "apiKeys": {
+    "title": "API Keys",
+    "create": "Create API Key",
+    "keyName": "Key Name",
+    "created": "Created",
+    "lastUsed": "Last Used",
+    "actions": {
+      "copy": "Copy",
+      "delete": "Delete",
+      "regenerate": "Regenerate"
+    }
+  },
+  "system": {
+    "health": "System Health",
+    "metrics": {
+      "cpu": "CPU Usage",
+      "memory": "Memory Usage",
+      "storage": "Storage Usage"
+    },
+    "status": {
+      "healthy": "Healthy",
+      "warning": "Warning",
+      "error": "Error"
+    }
+  }
+}

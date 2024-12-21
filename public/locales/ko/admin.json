@@ -1,0 +1,50 @@
+{
+  "dashboard": {
+    "title": "관리자 대시보드",
+    "overview": "개요",
+    "stats": {
+      "totalUsers": "전체 사용자",
+      "monthlyRevenue": "월간 수익",
+      "activeApiKeys": "활성 API 키",
+      "systemUptime": "시스템 가동 시간"
+    }
+  },
+  "users": {
+    "management": "사용자 관리",
+    "addUser": "사용자 추가",
+    "searchUsers": "사용자 검색...",
+    "columns": {
+      "name": "이름",
+      "email": "이메일",
+      "role": "역할",
+      "status": "상태",
+      "lastLogin": "마지막 로그인",
+      "actions": "작업"
+    }
+  },
+  "apiKeys": {
+    "title": "API 키",
+    "create": "API 키 생성",
+    "keyName": "키 이름",
+    "created": "생성일",
+    "lastUsed": "마지막 사용",
+    "actions": {
+      "copy": "복사",
+      "delete": "삭제",
+      "regenerate": "재생성"
+    }
+  },
+  "system": {
+    "health": "시스템 상태",
+    "metrics": {
+      "cpu": "CPU 사용량",
+      "memory": "메모리 사용량",
+      "storage": "저장소 사용량"
+    },
+    "status": {
+      "healthy": "정상",
+      "warning": "경고",
+      "error": "오류"
+    }
+  }
+}

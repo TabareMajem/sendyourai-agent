@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "title": "Transform Your Business with AI-Powered Automation",
+    "subtitle": "Streamline operations, enhance productivity, and drive growth with our cutting-edge solutions",
+    "cta": {
+      "primary": "Get Started Free",
+      "secondary": "Watch Demo"
+    }
+  },
+  "features": {
+    "title": "Powerful Features for Modern Businesses",
+    "subtitle": "Everything you need to automate and optimize your workflows",
+    "items": {
+      "aiAutomation": {
+        "title": "AI-Powered Automation",
+        "description": "Create customized workflows effortlessly with our intuitive drag-and-drop interface"
+      },
+      "integrations": {
+        "title": "Seamless Integrations",
+        "description": "Connect with your favorite tools and platforms seamlessly"
+      },
+      "smartWorkflows": {
+        "title": "Smart Workflows",
+        "description": "Build complex automation flows with conditional logic and AI decision-making"
+      },
+      "analytics": {
+        "title": "Real-Time Analytics",
+        "description": "Monitor and optimize your workflows with detailed performance insights"
+      }
+    }
+  },
+  "useCases": {
+    "title": "Solutions for Every Industry",
+    "subtitle": "Discover how Send AI Companion can transform your specific industry",
+    "industries": {
+      "hr": {
+        "title": "Human Resources",
+        "description": "Streamline onboarding, reviews, and employee management"
+      },
+      "healthcare": {
+        "title": "Healthcare",
+        "description": "Enhance patient care and medical workflows"
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "Personalize shopping experiences and automate support"
+      },
+      "realEstate": {
+        "title": "Real Estate",
+        "description": "Automate listings and virtual tour management"
+      },
+      "fitness": {
+        "title": "Fitness & Wellness",
+        "description": "Create personalized workout and nutrition plans"
+      }
+    }
+  },
+  "about": {
+    "title": "Our Mission",
+    "subtitle": "To empower businesses with intelligent automation, making AI accessible and practical for everyone",
+    "story": {
+      "title": "Our Story",
+      "content": "Founded in 2023, Send AI Companion emerged from a simple observation: businesses needed a better way to harness the power of AI."
+    },
+    "values": {
+      "title": "Our Values",
+      "items": {
+        "customerFirst": {
+          "title": "Customer First",
+          "description": "We put our customers at the heart of everything we do"
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "We constantly push boundaries to deliver cutting-edge AI solutions"
+        },
+        "trust": {
+          "title": "Trust & Security",
+          "description": "We maintain the highest standards of security and ethical AI practices"
+        },
+        "efficiency": {
+          "title": "Efficiency",
+          "description": "We strive to make complex workflows simple and efficient"
+        }
+      }
+    }
+  }
+}

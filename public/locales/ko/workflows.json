@@ -1,0 +1,38 @@
+{
+  "creator": {
+    "title": "워크플로우 생성기",
+    "components": {
+      "triggers": "트리거",
+      "actions": "액션",
+      "conditions": "조건"
+    },
+    "toolbar": {
+      "save": "저장",
+      "test": "테스트",
+      "deploy": "배포",
+      "undo": "실행 취소",
+      "redo": "다시 실행"
+    }
+  },
+  "management": {
+    "title": "워크플로우 관리",
+    "filters": {
+      "search": "워크플로우 검색...",
+      "status": "상태",
+      "tags": "태그",
+      "dateRange": "날짜 범위"
+    },
+    "actions": {
+      "create": "워크플로우 생성",
+      "edit": "편집",
+      "delete": "삭제",
+      "duplicate": "복제"
+    }
+  },
+  "details": {
+    "overview": "개요",
+    "execution": "실행 기록",
+    "settings": "설정",
+    "analytics": "분석"
+  }
+}

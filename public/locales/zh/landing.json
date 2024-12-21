@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "title": "用AI驱动的自动化改变您的业务",
+    "subtitle": "通过我们的尖端解决方案简化运营、提高生产力并推动增长",
+    "cta": {
+      "primary": "免费开始",
+      "secondary": "观看演示"
+    }
+  },
+  "features": {
+    "title": "现代企业的强大功能",
+    "subtitle": "自动化和优化工作流程所需的一切",
+    "items": {
+      "aiAutomation": {
+        "title": "AI驱动的自动化",
+        "description": "通过直观的拖放界面轻松创建自定义工作流程"
+      },
+      "integrations": {
+        "title": "无缝集成",
+        "description": "与您喜欢的工具和平台无缝连接"
+      },
+      "smartWorkflows": {
+        "title": "智能工作流程",
+        "description": "使用条件逻辑和AI决策构建复杂的自动化流程"
+      },
+      "analytics": {
+        "title": "实时分析",
+        "description": "通过详细的性能洞察监控和优化工作流程"
+      }
+    }
+  },
+  "useCases": {
+    "title": "适用于各个行业的解决方案",
+    "subtitle": "了解Send AI Companion如何改变您的特定行业",
+    "industries": {
+      "hr": {
+        "title": "人力资源",
+        "description": "简化入职、评审和员工管理"
+      },
+      "healthcare": {
+        "title": "医疗保健",
+        "description": "提升患者护理和医疗工作流程"
+      },
+      "ecommerce": {
+        "title": "电子商务",
+        "description": "个性化购物体验并自动化支持"
+      },
+      "realEstate": {
+        "title": "房地产",
+        "description": "自动化房源列表和虚拟看房管理"
+      },
+      "fitness": {
+        "title": "健身与健康",
+        "description": "创建个性化的运动和营养计划"
+      }
+    }
+  },
+  "about": {
+    "title": "我们的使命",
+    "subtitle": "通过智能自动化赋能企业，使AI变得人人可及且实用",
+    "story": {
+      "title": "我们的故事",
+      "content": "Send AI Companion成立于2023年，源于一个简单的观察：企业需要更好的方式来利用AI的力量。"
+    },
+    "values": {
+      "title": "我们的价值观",
+      "items": {
+        "customerFirst": {
+          "title": "客户至上",
+          "description": "我们将客户置于一切工作的核心"
+        },
+        "innovation": {
+          "title": "创新",
+          "description": "我们不断突破界限，提供尖端AI解决方案"
+        },
+        "trust": {
+          "title": "信任与安全",
+          "description": "我们保持最高标准的安全性和道德AI实践"
+        },
+        "efficiency": {
+          "title": "效率",
+          "description": "我们致力于使复杂的工作流程简单高效"
+        }
+      }
+    }
+  }
+}

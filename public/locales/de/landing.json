@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "title": "Transformieren Sie Ihr Unternehmen mit KI-gestützter Automatisierung",
+    "subtitle": "Optimieren Sie Abläufe, steigern Sie die Produktivität und fördern Sie das Wachstum mit unseren hochmodernen Lösungen",
+    "cta": {
+      "primary": "Kostenlos Starten",
+      "secondary": "Demo Ansehen"
+    }
+  },
+  "features": {
+    "title": "Leistungsstarke Funktionen für Moderne Unternehmen",
+    "subtitle": "Alles, was Sie zur Automatisierung und Optimierung Ihrer Workflows benötigen",
+    "items": {
+      "aiAutomation": {
+        "title": "KI-gestützte Automatisierung",
+        "description": "Erstellen Sie mühelos angepasste Workflows mit unserer intuitiven Drag-and-Drop-Oberfläche"
+      },
+      "integrations": {
+        "title": "Nahtlose Integrationen",
+        "description": "Verbinden Sie sich problemlos mit Ihren bevorzugten Tools und Plattformen"
+      },
+      "smartWorkflows": {
+        "title": "Intelligente Workflows",
+        "description": "Erstellen Sie komplexe Automatisierungsabläufe mit bedingter Logik und KI-Entscheidungsfindung"
+      },
+      "analytics": {
+        "title": "Echtzeit-Analysen",
+        "description": "Überwachen und optimieren Sie Ihre Workflows mit detaillierten Leistungseinblicken"
+      }
+    }
+  },
+  "useCases": {
+    "title": "Lösungen für Jede Branche",
+    "subtitle": "Entdecken Sie, wie Send AI Companion Ihre spezifische Branche transformieren kann",
+    "industries": {
+      "hr": {
+        "title": "Personalwesen",
+        "description": "Optimieren Sie Onboarding, Beurteilungen und Mitarbeiterverwaltung"
+      },
+      "healthcare": {
+        "title": "Gesundheitswesen",
+        "description": "Verbessern Sie die Patientenversorgung und medizinische Arbeitsabläufe"
+      },
+      "ecommerce": {
+        "title": "E-Commerce",
+        "description": "Personalisieren Sie Einkaufserlebnisse und automatisieren Sie den Support"
+      },
+      "realEstate": {
+        "title": "Immobilien",
+        "description": "Automatisieren Sie Angebote und virtuelle Besichtigungen"
+      },
+      "fitness": {
+        "title": "Fitness & Wellness",
+        "description": "Erstellen Sie personalisierte Trainings- und Ernährungspläne"
+      }
+    }
+  },
+  "about": {
+    "title": "Unsere Mission",
+    "subtitle": "Unternehmen durch intelligente Automatisierung stärken und KI für alle zugänglich und praktisch machen",
+    "story": {
+      "title": "Unsere Geschichte",
+      "content": "Gegründet im Jahr 2023, entstand Send AI Companion aus einer einfachen Beobachtung: Unternehmen brauchten einen besseren Weg, die Kraft der KI zu nutzen."
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "items": {
+        "customerFirst": {
+          "title": "Kunde zuerst",
+          "description": "Wir stellen unsere Kunden in den Mittelpunkt all unseres Handelns"
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "Wir verschieben ständig Grenzen, um modernste KI-Lösungen zu liefern"
+        },
+        "trust": {
+          "title": "Vertrauen & Sicherheit",
+          "description": "Wir halten die höchsten Standards für Sicherheit und ethische KI-Praktiken ein"
+        },
+        "efficiency": {
+          "title": "Effizienz",
+          "description": "Wir streben danach, komplexe Workflows einfach und effizient zu gestalten"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "dashboard": {
+    "title": "Admin-Dashboard",
+    "overview": "Übersicht",
+    "stats": {
+      "totalUsers": "Gesamtnutzer",
+      "monthlyRevenue": "Monatlicher Umsatz",
+      "activeApiKeys": "Aktive API-Schlüssel",
+      "systemUptime": "Systemlaufzeit"
+    }
+  },
+  "users": {
+    "management": "Benutzerverwaltung",
+    "addUser": "Benutzer hinzufügen",
+    "searchUsers": "Benutzer suchen...",
+    "columns": {
+      "name": "Name",
+      "email": "E-Mail",
+      "role": "Rolle",
+      "status": "Status",
+      "lastLogin": "Letzter Login",
+      "actions": "Aktionen"
+    }
+  },
+  "apiKeys": {
+    "title": "API-Schlüssel",
+    "create": "API-Schlüssel erstellen",
+    "keyName": "Schlüsselname",
+    "created": "Erstellt",
+    "lastUsed": "Zuletzt verwendet",
+    "actions": {
+      "copy": "Kopieren",
+      "delete": "Löschen",
+      "regenerate": "Neu generieren"
+    }
+  },
+  "system": {
+    "health": "Systemzustand",
+    "metrics": {
+      "cpu": "CPU-Auslastung",
+      "memory": "Speicherauslastung", 
+      "storage": "Speicherplatznutzung"
+    },
+    "status": {
+      "healthy": "Gesund",
+      "warning": "Warnung",
+      "error": "Fehler"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "dashboard": {
+    "title": "Tableau de Bord Admin",
+    "overview": "Aperçu",
+    "stats": {
+      "totalUsers": "Total Utilisateurs",
+      "monthlyRevenue": "Revenu Mensuel",
+      "activeApiKeys": "Clés API Actives",
+      "systemUptime": "Temps de Fonctionnement"
+    }
+  },
+  "users": {
+    "management": "Gestion des Utilisateurs",
+    "addUser": "Ajouter un Utilisateur",
+    "searchUsers": "Rechercher des utilisateurs...",
+    "columns": {
+      "name": "Nom",
+      "email": "Email",
+      "role": "Rôle",
+      "status": "Statut",
+      "lastLogin": "Dernière Connexion",
+      "actions": "Actions"
+    }
+  },
+  "apiKeys": {
+    "title": "Clés API",
+    "create": "Créer une Clé API",
+    "keyName": "Nom de la Clé",
+    "created": "Créée le",
+    "lastUsed": "Dernière Utilisation",
+    "actions": {
+      "copy": "Copier",
+      "delete": "Supprimer",
+      "regenerate": "Régénérer"
+    }
+  },
+  "system": {
+    "health": "État du Système",
+    "metrics": {
+      "cpu": "Utilisation CPU",
+      "memory": "Utilisation Mémoire",
+      "storage": "Utilisation Stockage"
+    },
+    "status": {
+      "healthy": "En Bonne Santé",
+      "warning": "Avertissement",
+      "error": "Erreur"
+    }
+  }
+}

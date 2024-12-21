@@ -1,0 +1,50 @@
+{
+  "dashboard": {
+    "title": "Панель Администратора",
+    "overview": "Обзор",
+    "stats": {
+      "totalUsers": "Всего Пользователей",
+      "monthlyRevenue": "Месячный Доход",
+      "activeApiKeys": "Активные API Ключи",
+      "systemUptime": "Время Работы"
+    }
+  },
+  "users": {
+    "management": "Управление Пользователями",
+    "addUser": "Добавить Пользователя",
+    "searchUsers": "Поиск пользователей...",
+    "columns": {
+      "name": "Имя",
+      "email": "Email",
+      "role": "Роль",
+      "status": "Статус",
+      "lastLogin": "Последний Вход",
+      "actions": "Действия"
+    }
+  },
+  "apiKeys": {
+    "title": "API Ключи",
+    "create": "Создать API Ключ",
+    "keyName": "Название Ключа",
+    "created": "Создан",
+    "lastUsed": "Последнее Использование",
+    "actions": {
+      "copy": "Копировать",
+      "delete": "Удалить",
+      "regenerate": "Пересоздать"
+    }
+  },
+  "system": {
+    "health": "Состояние Системы",
+    "metrics": {
+      "cpu": "Использование CPU",
+      "memory": "Использование Памяти",
+      "storage": "Использование Хранилища"
+    },
+    "status": {
+      "healthy": "Исправно",
+      "warning": "Предупреждение",
+      "error": "Ошибка"
+    }
+  }
+}

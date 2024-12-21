@@ -1,0 +1,38 @@
+{
+  "creator": {
+    "title": "Workflow Creator",
+    "components": {
+      "triggers": "Triggers",
+      "actions": "Actions",
+      "conditions": "Conditions"
+    },
+    "toolbar": {
+      "save": "Save",
+      "test": "Test",
+      "deploy": "Deploy",
+      "undo": "Undo",
+      "redo": "Redo"
+    }
+  },
+  "management": {
+    "title": "Workflow Management",
+    "filters": {
+      "search": "Search workflows...",
+      "status": "Status",
+      "tags": "Tags",
+      "dateRange": "Date Range"
+    },
+    "actions": {
+      "create": "Create Workflow",
+      "edit": "Edit",
+      "delete": "Delete",
+      "duplicate": "Duplicate"
+    }
+  },
+  "details": {
+    "overview": "Overview",
+    "execution": "Execution History",
+    "settings": "Settings",
+    "analytics": "Analytics"
+  }
+}
