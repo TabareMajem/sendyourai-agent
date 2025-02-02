@@ -1,4 +1,4 @@
-import { ZapierClient } from '../zapier/ZapierClient';
+import { ZapierClient } from "@/lib/zapier/ZapierClient";
 
 export async function setupPropertyListingWorkflow(
   zapier: ZapierClient,

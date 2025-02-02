@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Brain, Settings, Power, Gauge } from 'lucide-react';
 import { useProactiveAgent } from '../../hooks/useProactiveAgent';
 

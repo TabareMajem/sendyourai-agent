@@ -7,7 +7,7 @@ interface AuthenticationFlowProps {
 }
 
 export function AuthenticationFlow({ onAuthenticate, onError }: AuthenticationFlowProps) {
-  const [step, setStep] = useState<'password' | 'twoFactor'>('password');
+  const [step] = useState<'password' | 'twoFactor'>('password');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {

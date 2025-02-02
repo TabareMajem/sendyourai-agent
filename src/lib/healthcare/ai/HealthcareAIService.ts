@@ -1,39 +1,54 @@
-import { OpenAI } from 'openai';
-import { Claude } from '@anthropic-ai/sdk';
-import { AIAgent } from '../../ai/AIAgent';
+import OpenAI from 'openai';
+import Anthropic from '@anthropic-ai/sdk';
 import { AppError, ErrorCodes } from '../../utils/errors';
+import { TextBlock } from '@anthropic-ai/sdk/src/resources/messages.js';
+
+type UrgencyLevel = 'low' | 'medium' | 'high' | 'emergency';
+
+interface SymptomAnalysis {
+  analysis: string;
+  recommendations: string[];
+  urgencyLevel: UrgencyLevel;
+}
+
+interface HealthEducation {
+  content: string;
+  references: string[];
+  readingLevel: string;
+}
+
+interface FollowUpSuggestion {
+  recommendation: string;
+  timeframe: string;
+  reason: string;
+}
+
+type AnthropicMessage = Anthropic.Messages.Message;
+type OpenAIResponse = OpenAI.Chat.Completions.ChatCompletion;
 
 export class HealthcareAIService {
   private openai: OpenAI;
-  private claude: Claude;
-  private aiAgent: AIAgent;
+  private anthropic: Anthropic;
 
   constructor(config: {
     openaiApiKey: string;
-    claudeApiKey: string;
+    anthropicApiKey: string;
   }) {
     this.openai = new OpenAI({ apiKey: config.openaiApiKey });
-    this.claude = new Claude(config.claudeApiKey);
-    this.aiAgent = new AIAgent();
+    this.anthropic = new Anthropic({ apiKey: config.anthropicApiKey });
   }
 
-  async analyzeSymptoms(symptoms: string[]): Promise<{
-    analysis: string;
-    recommendations: string[];
-    urgencyLevel: 'low' | 'medium' | 'high' | 'emergency';
-  }> {
+  async analyzeSymptoms(symptoms: string[]): Promise<SymptomAnalysis> {
     try {
-      // Use Claude for initial analysis
-      const claudeResponse = await this.claude.messages.create({
+      const anthropicResponse = await this.anthropic.messages.create({
         model: 'claude-3-opus-20240229',
+        max_tokens: 1000,
         messages: [{
           role: 'user',
           content: `Analyze these symptoms and provide medical insights: ${symptoms.join(', ')}`
-        }],
-        temperature: 0.3
+        }]
       });
 
-      // Use OpenAI for verification and additional insights
       const openaiResponse = await this.openai.chat.completions.create({
         model: 'gpt-4',
         messages: [
@@ -43,14 +58,12 @@ export class HealthcareAIService {
           },
           {
             role: 'user',
-            content: `Verify this symptom analysis: ${claudeResponse.content}`
+            content: `Verify this symptom analysis: ${this.getAnthropicContent(anthropicResponse)}`
           }
-        ],
-        temperature: 0.2
+        ]
       });
 
-      // Combine and process responses
-      return this.processAIResponses(claudeResponse, openaiResponse);
+      return this.processAIResponses(anthropicResponse, openaiResponse);
     } catch (error) {
       throw new AppError(
         'Failed to analyze symptoms',
@@ -61,20 +74,34 @@ export class HealthcareAIService {
     }
   }
 
-  async generateHealthEducation(topic: string, patientContext: any): Promise<{
-    content: string;
-    references: string[];
-    readingLevel: string;
-  }> {
+  private getAnthropicContent(response: AnthropicMessage): string {
+    if (!response.content || response.content.length === 0) {
+      return '';
+    }
+
+    const textContent = response.content.find((block): block is TextBlock => 
+      'type' in block && 
+      block.type === 'text' && 
+      'value' in block && 
+      typeof block.value === 'string'
+    );
+
+    return textContent?.text || '';
+  }
+
+  async generateHealthEducation(
+    topic: string, 
+    patientContext: Record<string, any>
+  ): Promise<HealthEducation> {
     try {
-      // Use Claude for initial content generation
-      const claudeResponse = await this.claude.messages.create({
+      // Use Anthropic for initial content generation
+      const anthropicResponse = await this.anthropic.messages.create({
         model: 'claude-3-opus-20240229',
+        max_tokens: 1500,
         messages: [{
           role: 'user',
           content: `Generate patient-friendly health education content about: ${topic}`
-        }],
-        temperature: 0.4
+        }]
       });
 
       // Use OpenAI to adapt content to patient's context
@@ -87,13 +114,12 @@ export class HealthcareAIService {
           },
           {
             role: 'user',
-            content: `Adapt this health education content for the patient: ${claudeResponse.content}`
+            content: `Adapt this health education content for the patient context: ${JSON.stringify(patientContext)}\n\nContent: ${anthropicResponse.content}`
           }
-        ],
-        temperature: 0.3
+        ]
       });
 
-      return this.processHealthEducation(claudeResponse, openaiResponse, patientContext);
+      return this.processHealthEducation(anthropicResponse, openaiResponse, patientContext);
     } catch (error) {
       throw new AppError(
         'Failed to generate health education content',
@@ -104,11 +130,7 @@ export class HealthcareAIService {
     }
   }
 
-  async suggestFollowUp(patientHistory: any): Promise<{
-    recommendation: string;
-    timeframe: string;
-    reason: string;
-  }> {
+  async suggestFollowUp(patientHistory: Record<string, any>): Promise<FollowUpSuggestion> {
     try {
       // Use OpenAI for initial recommendation
       const openaiResponse = await this.openai.chat.completions.create({
@@ -122,21 +144,20 @@ export class HealthcareAIService {
             role: 'user',
             content: `Suggest follow-up based on this patient history: ${JSON.stringify(patientHistory)}`
           }
-        ],
-        temperature: 0.3
+        ]
       });
 
-      // Use Claude to verify and enhance recommendation
-      const claudeResponse = await this.claude.messages.create({
+      // Use Anthropic to verify and enhance recommendation
+      const anthropicResponse = await this.anthropic.messages.create({
         model: 'claude-3-opus-20240229',
+        max_tokens: 1000,
         messages: [{
           role: 'user',
           content: `Verify and enhance this follow-up recommendation: ${openaiResponse.choices[0].message.content}`
-        }],
-        temperature: 0.2
+        }]
       });
 
-      return this.processFollowUpSuggestion(openaiResponse, claudeResponse);
+      return this.processFollowUpSuggestion(openaiResponse, anthropicResponse);
     } catch (error) {
       throw new AppError(
         'Failed to generate follow-up suggestion',
@@ -147,26 +168,27 @@ export class HealthcareAIService {
     }
   }
 
-  private processAIResponses(claudeResponse: any, openaiResponse: any): any {
-    // Implement response processing logic
-    const analysis = claudeResponse.content;
+  private processAIResponses(
+    anthropicResponse: AnthropicMessage,
+    openaiResponse: OpenAIResponse
+  ): SymptomAnalysis {
+    const analysis = this.getAnthropicContent(anthropicResponse);
     const verification = openaiResponse.choices[0].message.content;
 
-    // Extract recommendations and urgency level
-    const recommendations = this.extractRecommendations(analysis, verification);
-    const urgencyLevel = this.determineUrgencyLevel(analysis, verification);
-
     return {
-      analysis: this.combineAnalysis(analysis, verification),
-      recommendations,
-      urgencyLevel
+      analysis: this.combineAnalysis(analysis, verification || ''),
+      recommendations: this.extractRecommendations(analysis, verification || ''),
+      urgencyLevel: this.determineUrgencyLevel(analysis, verification || '')
     };
   }
 
-  private processHealthEducation(claudeResponse: any, openaiResponse: any, patientContext: any): any {
-    // Implement health education processing logic
-    const baseContent = claudeResponse.content;
-    const adaptedContent = openaiResponse.choices[0].message.content;
+  private processHealthEducation(
+    anthropicResponse: AnthropicMessage,
+    openaiResponse: OpenAIResponse,
+    patientContext: Record<string, any>
+  ): HealthEducation {
+    const baseContent = this.getAnthropicContent(anthropicResponse);
+    const adaptedContent = openaiResponse.choices[0].message.content || '';
 
     return {
       content: this.adaptContentToContext(adaptedContent, patientContext),
@@ -175,10 +197,12 @@ export class HealthcareAIService {
     };
   }
 
-  private processFollowUpSuggestion(openaiResponse: any, claudeResponse: any): any {
-    // Implement follow-up suggestion processing logic
-    const initialSuggestion = openaiResponse.choices[0].message.content;
-    const verifiedSuggestion = claudeResponse.content;
+  private processFollowUpSuggestion(
+    openaiResponse: OpenAIResponse,
+    anthropicResponse: AnthropicMessage
+  ): FollowUpSuggestion {
+    const initialSuggestion = openaiResponse.choices[0].message.content || '';
+    const verifiedSuggestion = this.getAnthropicContent(anthropicResponse);
 
     return {
       recommendation: this.extractRecommendation(initialSuggestion, verifiedSuggestion),
@@ -187,49 +211,64 @@ export class HealthcareAIService {
     };
   }
 
-  // Helper methods for processing AI responses
+  // Helper methods implementation
   private extractRecommendations(analysis: string, verification: string): string[] {
-    // Implementation
-    return [];
+    const combinedText = `${analysis}\n${verification}`;
+    const recommendations = combinedText.match(/(?:recommend|suggest).*?[.!?]/gi) || [];
+    return recommendations.map(rec => rec.trim());
   }
 
-  private determineUrgencyLevel(analysis: string, verification: string): 'low' | 'medium' | 'high' | 'emergency' {
-    // Implementation
+  private determineUrgencyLevel(analysis: string, verification: string): UrgencyLevel {
+    const combinedText = `${analysis}\n${verification}`.toLowerCase();
+    if (combinedText.includes('emergency') || combinedText.includes('immediate')) return 'emergency';
+    if (combinedText.includes('urgent') || combinedText.includes('high risk')) return 'high';
+    if (combinedText.includes('moderate') || combinedText.includes('soon')) return 'medium';
     return 'low';
   }
 
   private combineAnalysis(analysis: string, verification: string): string {
-    // Implementation
-    return '';
+    return `Primary Analysis: ${analysis}\nVerification: ${verification}`;
   }
 
-  private adaptContentToContext(content: string, context: any): string {
-    // Implementation
-    return '';
+  private adaptContentToContext(content: string, context: Record<string, any>): string {
+    // Implement content adaptation based on patient context
+    return content.replace(/\{\{(\w+)\}\}/g, (_, key) => context[key] || '');
   }
 
   private extractReferences(content: string): string[] {
-    // Implementation
-    return [];
+    const references = content.match(/\[\d+\].*?(?=\[\d+\]|$)/g) || [];
+    return references.map(ref => ref.trim());
   }
 
   private determineReadingLevel(content: string): string {
-    // Implementation
-    return '';
+    // Implement reading level determination logic
+    const words = content.split(/\s+/).length;
+    const sentences = content.split(/[.!?]+/).length;
+    const averageWordsPerSentence = words / sentences;
+    
+    if (averageWordsPerSentence > 20) return 'Advanced';
+    if (averageWordsPerSentence > 15) return 'Intermediate';
+    return 'Basic';
   }
 
   private extractRecommendation(initial: string, verified: string): string {
-    // Implementation
-    return '';
+    const recommendation = initial.match(/recommend.*?[.!?]/i)?.[0] || 
+                          verified.match(/recommend.*?[.!?]/i)?.[0] || 
+                          'No specific recommendation provided.';
+    return recommendation.trim();
   }
 
   private extractTimeframe(initial: string, verified: string): string {
-    // Implementation
-    return '';
+    const timeframe = initial.match(/within \d+.*?[.!?]/i)?.[0] || 
+                     verified.match(/within \d+.*?[.!?]/i)?.[0] || 
+                     'No specific timeframe provided.';
+    return timeframe.trim();
   }
 
   private extractReason(initial: string, verified: string): string {
-    // Implementation
-    return '';
+    const reason = initial.match(/because.*?[.!?]/i)?.[0] || 
+                  verified.match(/because.*?[.!?]/i)?.[0] || 
+                  'No specific reason provided.';
+    return reason.trim();
   }
 }

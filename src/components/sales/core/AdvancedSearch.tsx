@@ -1,6 +1,5 @@
-```typescript
-import React, { useState } from 'react';
-import { Search, Filter, Plus, X } from 'lucide-react';
+import { useState } from 'react';
+import { Search, Plus, X } from 'lucide-react';
 
 interface SearchFilter {
   field: string;
@@ -127,4 +126,4 @@ export function AdvancedSearch({ onSearch, availableFields }: AdvancedSearchProp
     </div>
   );
 }
-```
+

@@ -17,7 +17,7 @@ export class DesignAgent {
     type: string;
     targetDate?: Date;
   }>> {
-    return this.aiAgent.queueAction('analysis', {
+    const result = await this.aiAgent.queueAction('analysis', {
       type: 'visual_generation',
       data: {
         copy: input.copy,
@@ -27,5 +27,18 @@ export class DesignAgent {
         format: 'channel_optimized'
       }
     });
+
+    // Assuming the visuals data is in result.payload and it's an array
+    if (result.payload && Array.isArray(result.payload)) {
+      return result.payload.map((item: any) => ({
+        channel: item.channel || '',  // Assuming item has a channel property
+        url: item.url || '',  // Assuming item has a url property
+        type: item.type || '',  // Assuming item has a type property
+        targetDate: item.targetDate || undefined  // Assuming item may have targetDate property
+      }));
+    }
+
+    // If result does not contain an array, return an empty array or handle the case
+    return [];
   }
 }

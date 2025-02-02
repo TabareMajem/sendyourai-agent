@@ -1,5 +1,3 @@
-```typescript
-import React from 'react';
 import { TrendingUp, Users, Clock, Book, Brain } from 'lucide-react';
 
 interface PerformanceMetricsProps {
@@ -85,4 +83,3 @@ export function PerformanceMetrics({ metrics, className = '' }: PerformanceMetri
     </div>
   );
 }
-```

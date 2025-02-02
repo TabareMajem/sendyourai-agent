@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 
 interface UseCaseLayoutProps {
   children: React.ReactNode;

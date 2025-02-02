@@ -1,4 +1,3 @@
-```typescript
 import { Device, Call } from '@twilio/voice-sdk';
 import { AppError, ErrorCodes } from '../../utils/errors';
 
@@ -10,11 +9,10 @@ export class TwilioVoiceService {
   constructor(private token: string) {}
 
   async initialize(onCallStatusChange?: (status: string) => void) {
+
     try {
       this.device = new Device(this.token, {
-        codecPreferences: ['opus', 'pcmu'],
-        fakeLocalDTMF: true,
-        enableRingingState: true
+        allowIncomingWhileBusy: false
       });
 
       this.onCallStatusChange = onCallStatusChange;
@@ -108,7 +106,7 @@ export class TwilioVoiceService {
   async mute(): Promise<void> {
     if (this.currentCall) {
       try {
-        await this.currentCall.mute();
+        await this.currentCall.mute(true);
       } catch (error) {
         throw new AppError(
           'Failed to mute call',
@@ -123,7 +121,7 @@ export class TwilioVoiceService {
   async unmute(): Promise<void> {
     if (this.currentCall) {
       try {
-        await this.currentCall.unmute();
+        await this.currentCall.mute(false);
       } catch (error) {
         throw new AppError(
           'Failed to unmute call',
@@ -144,4 +142,3 @@ export class TwilioVoiceService {
     }
   }
 }
-```

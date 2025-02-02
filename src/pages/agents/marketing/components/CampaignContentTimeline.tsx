@@ -1,5 +1,4 @@
-import React from 'react';
-import { Calendar, MessageSquare, Image, FileText, CheckCircle, Clock, AlertCircle } from 'lucide-react';
+import { CheckCircle, Clock, AlertCircle } from 'lucide-react';
 import { Campaign } from '../../../../lib/agents/marketing/types';
 
 interface CampaignContentTimelineProps {
@@ -20,19 +19,6 @@ export function CampaignContentTimeline({ campaign }: CampaignContentTimelinePro
     }
   };
 
-  const getContentTypeIcon = (contentId: string) => {
-    const content = [...campaign.content.copy, ...campaign.content.visuals]
-      .find(c => c.channel + c.text || c.url === contentId);
-    
-    if (!content) return <FileText className="h-5 w-5 text-gray-400" />;
-
-    if ('text' in content) {
-      return <MessageSquare className="h-5 w-5 text-blue-500" />;
-    } else {
-      return <Image className="h-5 w-5 text-purple-500" />;
-    }
-  };
-
   return (
     <div className="flow-root">
       <ul className="-mb-8">
@@ -50,7 +36,7 @@ export function CampaignContentTimeline({ campaign }: CampaignContentTimelinePro
                 <div className="relative flex space-x-3">
                   <div>
                     <span className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center">
-                      {getContentTypeIcon(event.contentId)}
+                      {/* {getContentTypeIcon(event.contentId)} */}
                     </span>
                   </div>
                   <div className="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">

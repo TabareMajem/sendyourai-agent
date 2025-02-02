@@ -1,11 +1,9 @@
-```typescript
 import { ZapierClient } from '../../zapier/ZapierClient';
 import { AIAgent } from '../../ai/AIAgent';
 import { PropertyListingWorkflow } from './PropertyListingWorkflow';
 import { VirtualTourWorkflow } from './VirtualTourWorkflow';
 import { MLSService } from './services/MLSService';
 import { ZillowService } from './services/ZillowService';
-import { MatterportService } from './services/MatterportService';
 
 export class RealEstateWorkflowManager {
   private zapier: ZapierClient;
@@ -14,7 +12,6 @@ export class RealEstateWorkflowManager {
   private virtualTourWorkflow: VirtualTourWorkflow;
   private mlsService: MLSService;
   private zillowService: ZillowService;
-  private matterportService: MatterportService;
 
   constructor(config: {
     zapierAuth: { apiKey: string; accountId: string };
@@ -27,7 +24,6 @@ export class RealEstateWorkflowManager {
     
     this.mlsService = new MLSService(config.mlsConfig);
     this.zillowService = new ZillowService(config.zillowApiKey);
-    this.matterportService = new MatterportService(config.matterportApiKey);
 
     this.propertyListingWorkflow = new PropertyListingWorkflow(this.zapier, this.aiAgent);
     this.virtualTourWorkflow = new VirtualTourWorkflow(this.zapier, this.aiAgent);
@@ -47,8 +43,16 @@ export class RealEstateWorkflowManager {
 
   public async handleNewListing(propertyData: any) {
     const validatedProperty = await this.mlsService.getProperty(propertyData.id);
-    await this.propertyListingWorkflow.processNewListing(validatedProperty);
+    const formattedAddress = `${validatedProperty.address.street}, ${validatedProperty.address.city}, ${validatedProperty.address.state} ${validatedProperty.address.zip}, ${validatedProperty.address.country}`;
+    const processedProperty = {
+      ...validatedProperty,
+      address: formattedAddress,
+    };
+
+    await this.propertyListingWorkflow.processNewListing(processedProperty);
   }
+  
+
 
   public async handleTourRequest(request: any) {
     await this.virtualTourWorkflow.processTourRequest(request);
@@ -70,4 +74,3 @@ export class RealEstateWorkflowManager {
     };
   }
 }
-```

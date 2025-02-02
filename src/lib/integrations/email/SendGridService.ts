@@ -1,6 +1,11 @@
-```typescript
 import { MailService } from '@sendgrid/mail';
 import { AppError, ErrorCodes } from '../../utils/errors';
+import { MailDataRequired } from '@sendgrid/mail';
+
+type MailContent = {
+  type: 'text/plain' | 'text/html';
+  value: string;
+};
 
 export class SendGridService {
   private client: MailService;
@@ -24,7 +29,7 @@ export class SendGridService {
         to: params.to,
         from: params.from,
         subject: params.subject,
-        text: params.text,
+        text: params.text ?? '',
         html: params.html,
         templateId: params.templateId,
         dynamicTemplateData: params.dynamicTemplateData
@@ -49,15 +54,56 @@ export class SendGridService {
     dynamicTemplateData?: Record<string, any>;
   }): Promise<void> {
     try {
-      const messages = params.to.map(recipient => ({
-        to: recipient,
-        from: params.from,
-        subject: params.subject,
-        text: params.text,
-        html: params.html,
-        templateId: params.templateId,
-        dynamicTemplateData: params.dynamicTemplateData
-      }));
+      const messages = params.to.map((recipient): MailDataRequired => {
+        let content: MailContent[] = [];
+
+        if (params.templateId) {
+          // For template-based emails, ensure at least one content item
+          content = [{
+            type: 'text/plain',
+            value: params.text || ' '
+          }] as [MailContent, ...MailContent[]];
+
+          return {
+            to: recipient,
+            from: params.from,
+            subject: params.subject,
+            templateId: params.templateId,
+            dynamicTemplateData: params.dynamicTemplateData,
+            content
+          } as MailDataRequired;
+        } else {
+          // For regular emails, build content array
+          if (params.text) {
+            content.push({
+              type: 'text/plain',
+              value: params.text
+            });
+          }
+
+          if (params.html) {
+            content.push({
+              type: 'text/html',
+              value: params.html
+            });
+          }
+
+          // Ensure at least one content item exists
+          if (content.length === 0) {
+            content = [{
+              type: 'text/plain',
+              value: ' '
+            }] as [MailContent, ...MailContent[]];
+          }
+
+          return {
+            to: recipient,
+            from: params.from,
+            subject: params.subject,
+            content: content as [MailContent, ...MailContent[]]
+          } as MailDataRequired;
+        }
+      });
 
       await this.client.send(messages);
     } catch (error) {
@@ -69,6 +115,7 @@ export class SendGridService {
       );
     }
   }
+  
 
   async getEmailTemplate(templateId: string): Promise<any> {
     try {
@@ -85,11 +132,7 @@ export class SendGridService {
     }
   }
 
-  async createEmailTemplate(template: {
-    name: string;
-    subject: string;
-    html: string;
-  }): Promise<any> {
+  async createEmailTemplate(): Promise<any> {
     try {
       // Note: SendGrid API doesn't provide direct template creation via API
       // This is a placeholder for when you need to manage templates
@@ -104,4 +147,3 @@ export class SendGridService {
     }
   }
 }
-```

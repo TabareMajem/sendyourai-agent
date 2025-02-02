@@ -1,4 +1,3 @@
-```typescript
 import { ZapierClient } from '../../zapier/ZapierClient';
 import { AIAgent } from '../../ai/AIAgent';
 import { TriggerManager } from '../../ai/TriggerManager';
@@ -72,4 +71,4 @@ export class AppointmentReminderWorkflow {
     });
   }
 }
-```
+

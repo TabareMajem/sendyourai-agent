@@ -1,4 +1,3 @@
-import React from 'react';
 import { Play, Settings, AlertTriangle } from 'lucide-react';
 
 interface Trigger {

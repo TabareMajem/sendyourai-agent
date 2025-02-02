@@ -1,6 +1,4 @@
-import React from 'react';
 import { IntegrationCard } from './IntegrationCard';
-import { useIntegrations } from '../../hooks/useIntegrations';
 
 interface IntegrationGridProps {
   integrations: any[];
@@ -11,7 +9,6 @@ export function IntegrationGrid({
   integrations,
   onIntegrationSelect
 }: IntegrationGridProps) {
-  const { icons } = useIntegrations();
 
   if (!integrations?.length) {
     return (
@@ -28,7 +25,7 @@ export function IntegrationGrid({
           key={integration.id}
           integration={{
             ...integration,
-            icon: icons[integration.id] || icons.default
+            // icon: icons[integration.id] || icons.default
           }}
           onClick={() => onIntegrationSelect(integration.id)}
         />

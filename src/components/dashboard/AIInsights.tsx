@@ -1,4 +1,3 @@
-import React from 'react';
 import { Lightbulb, ArrowRight, ThumbsUp, ThumbsDown } from 'lucide-react';
 
 export function AIInsights() {

@@ -1,4 +1,3 @@
-```typescript
 import { useState, useEffect } from 'react';
 import { TwilioVoiceService } from '../lib/integrations/voice/TwilioVoiceService';
 
@@ -75,4 +74,4 @@ export function useTwilioVoice(token: string) {
     toggleMute
   };
 }
-```
+

@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DashboardLayout } from '../../components/dashboard/DashboardLayout';
 import { IntegrationGrid } from '../../components/integrations/IntegrationGrid';
 import { IntegrationFilters } from '../../components/integrations/IntegrationFilters';
-import { IntegrationDetails } from '../../components/integrations/IntegrationDetails';
 import { useIntegrations } from '../../hooks/useIntegrations';
 
 export function IntegrationSetup() {
   const { integrations, isLoading, error } = useIntegrations();
-  const [selectedIntegration, setSelectedIntegration] = useState<string | null>(null);
+  const [, setSelectedIntegration] = useState<string | null>(null);
   const [filters, setFilters] = useState({
     search: '',
     category: '',
@@ -67,12 +66,12 @@ export function IntegrationSetup() {
         </div>
 
         {/* Details Panel */}
-        {selectedIntegration && (
-          <IntegrationDetails
-            integrationId={selectedIntegration}
-            onClose={() => setSelectedIntegration(null)}
-          />
-        )}
+        {/* {selectedIntegration && (
+          // <integrations
+          //   integrationId={selectedIntegration}
+          //   onClose={() => setSelectedIntegration(null)}
+          // />
+        )} */}
       </div>
     </DashboardLayout>
   );

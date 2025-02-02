@@ -1,4 +1,3 @@
-```typescript
 import { useState, useEffect } from 'react';
 import { SubscriptionManager, type Subscription, type Plan } from '../lib/subscription/SubscriptionManager';
 import { useAuth } from './useAuth';
@@ -89,4 +88,4 @@ export function useSubscription() {
     reactivateSubscription
   };
 }
-```
+

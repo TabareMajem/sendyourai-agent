@@ -1,5 +1,4 @@
-```typescript
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Ticket, Filter, Search, AlertCircle, CheckCircle, Clock } from 'lucide-react';
 
 interface SupportTicket {
@@ -29,9 +28,6 @@ interface TicketManagementProps {
 
 export function TicketManagement({
   tickets,
-  onAssignTicket,
-  onUpdateStatus,
-  onUpdatePriority
 }: TicketManagementProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
@@ -183,4 +179,4 @@ export function TicketManagement({
     </div>
   );
 }
-```
+

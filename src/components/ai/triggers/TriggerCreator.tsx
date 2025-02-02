@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Plus, Calendar, Zap, Filter } from 'lucide-react';
 import { ScheduleTriggerForm } from './ScheduleTriggerForm';
 import { EventTriggerForm } from './EventTriggerForm';

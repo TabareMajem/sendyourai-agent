@@ -1,5 +1,4 @@
-import React from 'react';
-import { Activity, FileText, Users, Clock } from 'lucide-react';
+import { Activity, FileText } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 interface ActivityAnalyticsProps {

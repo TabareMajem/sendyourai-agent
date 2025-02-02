@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { apiRequest } from '../lib/utils/api';
 
 interface Settings {
   account: {
@@ -56,13 +55,13 @@ export function useSettings() {
     loadSettings();
   }, []);
 
-  const updateSettings = async (section: string, data: any) => {
+  const updateSettings = async () => {
     try {
       // In a real app, this would call an API
       await new Promise(resolve => setTimeout(resolve, 1000));
       setSettings(prev => prev ? {
         ...prev,
-        [section]: { ...prev[section], ...data }
+        // [section]: { ...prev[section], ...data }
       } : null);
       return true;
     } catch (err) {

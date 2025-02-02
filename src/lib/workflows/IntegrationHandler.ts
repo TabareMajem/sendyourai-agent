@@ -15,7 +15,7 @@ export class IntegrationHandler {
     this.openAIClient = new OpenAIClient(process.env.VITE_OPENAI_API_KEY || '');
   }
 
-  async executeAction(action: any, context: any) {
+  async executeAction(action: any, ) {
     try {
       switch (action.service) {
         case 'zapier':
@@ -40,7 +40,7 @@ export class IntegrationHandler {
     }
   }
 
-  async executeTrigger(trigger: any, context: any) {
+  async executeTrigger(trigger: any ) {
     try {
       switch (trigger.type) {
         case 'schedule':

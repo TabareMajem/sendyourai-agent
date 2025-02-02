@@ -1,4 +1,17 @@
+import { z } from 'zod';
 import { AIAgent } from '../../../ai/AIAgent';
+
+// Define the expected schema for the quality plan
+const QualityPlanSchema = z.object({
+  checkpoints: z.array(
+    z.object({
+      phase: z.string(),
+      criteria: z.array(z.string()),
+      status: z.enum(['pending', 'passed', 'failed']),
+    })
+  ),
+  metrics: z.record(z.number()),
+});
 
 export class QualityAssuranceAgent {
   constructor(private aiAgent: AIAgent) {}
@@ -16,21 +29,26 @@ export class QualityAssuranceAgent {
     }>;
     metrics: Record<string, number>;
   }> {
-    return this.aiAgent.queueAction('analysis', {
+    const result = await this.aiAgent.queueAction('analysis', {
       type: 'quality_plan_creation',
       data: {
         projectScope: input.scope,
         deliverables: input.deliverables,
         schedule: input.schedule,
-        tasks: input.tasks
-      }
+        tasks: input.tasks,
+      },
     });
+
+    // Validate the payload with the schema
+    const validatedPayload = QualityPlanSchema.parse(result.payload);
+
+    return validatedPayload;
   }
 
   public async checkQuality(projectId: string): Promise<any> {
     return this.aiAgent.queueAction('analysis', {
       type: 'quality_check',
-      data: { projectId }
+      data: { projectId },
     });
   }
 }

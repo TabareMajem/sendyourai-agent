@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { RefreshCw, Database, Settings, AlertTriangle } from 'lucide-react';
 
 interface ContactSyncConfigProps {
@@ -108,7 +108,7 @@ export function ContactSyncConfig({ onSave, currentConfig }: ContactSyncConfigPr
                   onChange={(e) => {
                     const platforms = e.target.checked
                       ? [...config.platforms, platform]
-                      : config.platforms.filter(p => p !== platform);
+                      : config.platforms.filter((p: string) => p !== platform);
                     setConfig({ ...config, platforms });
                   }}
                   className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Play, CheckCircle, AlertTriangle, MessageSquare } from 'lucide-react';
 
 interface SimulationPreviewProps {

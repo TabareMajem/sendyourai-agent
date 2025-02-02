@@ -1,4 +1,4 @@
-import { ProjectManagementProvider } from './types';
+import { ProjectManagementProvider } from '../types';
 
 export class AsanaClient implements ProjectManagementProvider {
   private accessToken: string;

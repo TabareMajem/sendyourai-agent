@@ -1,37 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { DashboardLayout } from '../../../components/dashboard/DashboardLayout';
-import { MarketingCampaignManager } from '../../../lib/agents/marketing/MarketingCampaignManager';
 import { Campaign } from '../../../lib/agents/marketing/types';
 import { Plus, Filter, Search } from 'lucide-react';
 
 export function MarketingCampaignDashboard() {
-  const [campaigns, setCampaigns] = useState<Campaign[]>([]);
+  const [campaigns, ] = useState<Campaign[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [showNewCampaign, setShowNewCampaign] = useState(false);
+  const [, setShowNewCampaign] = useState(false);
   const [filters, setFilters] = useState({
     status: '',
     search: ''
   });
 
-  const campaignManager = new MarketingCampaignManager();
-
   useEffect(() => {
     // Load campaigns
     setIsLoading(false);
   }, []);
-
-  const handleCreateCampaign = async (campaignData: any) => {
-    setIsLoading(true);
-    try {
-      const newCampaign = await campaignManager.createCampaign(campaignData);
-      setCampaigns([...campaigns, newCampaign]);
-      setShowNewCampaign(false);
-    } catch (error) {
-      console.error('Failed to create campaign:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   return (
     <DashboardLayout>

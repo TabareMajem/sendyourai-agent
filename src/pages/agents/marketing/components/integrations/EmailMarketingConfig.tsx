@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, AlertTriangle } from 'lucide-react';
 
 interface EmailMarketingConfigProps {

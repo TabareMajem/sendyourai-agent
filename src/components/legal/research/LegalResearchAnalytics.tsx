@@ -1,7 +1,5 @@
-```typescript
-import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { TrendingUp, Scale, Calendar, AlertCircle } from 'lucide-react';
+import { TrendingUp, Scale } from 'lucide-react';
 
 interface AnalyticsData {
   citationMetrics: {
@@ -155,4 +153,4 @@ export function LegalResearchAnalytics({ data }: LegalResearchAnalyticsProps) {
     </div>
   );
 }
-```
+

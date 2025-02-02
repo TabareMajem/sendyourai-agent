@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Database, RefreshCw, Search, AlertTriangle } from 'lucide-react';
+import { useState } from 'react';
+import { Database, RefreshCw, Search } from 'lucide-react';
 
 interface DataEnrichmentProps {
   onEnrich: (data: any) => Promise<any>;
   onBulkEnrich: (data: any[]) => Promise<any[]>;
 }
 
-export function DataEnrichment({ onEnrich, onBulkEnrich }: DataEnrichmentProps) {
+export function DataEnrichment({ onEnrich }: DataEnrichmentProps) {
   const [isEnriching, setIsEnriching] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [results, setResults] = useState<any[]>([]);

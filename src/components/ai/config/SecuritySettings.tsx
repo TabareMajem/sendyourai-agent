@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
-import { Shield, Lock, Key, AlertTriangle } from 'lucide-react';
+import { useState } from 'react';
+import { Lock, FileText, AlertTriangle } from 'lucide-react';
+
+interface SecurityConfig {
+  dataEncryption: boolean;
+  auditLogging: boolean;
+  accessControl: boolean;
+  complianceMode: string;
+  sensitiveDataHandling: string[];
+}
 
 export function SecuritySettings() {
-  const [config, setConfig] = useState({
+  const [config, setConfig] = useState<SecurityConfig>({
     dataEncryption: true,
     auditLogging: true,
     accessControl: true,
@@ -10,8 +18,8 @@ export function SecuritySettings() {
     sensitiveDataHandling: ['mask', 'encrypt']
   });
 
-  const handleToggle = (key: keyof typeof config) => {
-    setConfig({ ...config, [key]: !config[key] });
+  const handleToggle = (key: keyof SecurityConfig) => {
+    setConfig({ ...config, [key]: !config[key as keyof SecurityConfig] });
   };
 
   const handleComplianceModeChange = (mode: string) => {
@@ -31,9 +39,9 @@ export function SecuritySettings() {
       {/* Security Toggles */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center">
+          <div className="flex items-center space-x-2">
             <Lock className="w-5 h-5 text-indigo-600" />
-            <div className="ml-3">
+            <div>
               <p className="text-sm font-medium text-gray-900">Data Encryption</p>
               <p className="text-xs text-gray-500">Encrypt all sensitive data at rest and in transit</p>
             </div>
@@ -50,9 +58,9 @@ export function SecuritySettings() {
         </div>
 
         <div className="flex items-center justify-between">
-          <div className="flex items-center">
+          <div className="flex items-center space-x-2">
             <FileText className="w-5 h-5 text-indigo-600" />
-            <div className="ml-3">
+            <div>
               <p className="text-sm font-medium text-gray-900">Audit Logging</p>
               <p className="text-xs text-gray-500">Keep detailed logs of all AI actions and decisions</p>
             </div>
@@ -100,8 +108,8 @@ export function SecuritySettings() {
                 onChange={() => handleSensitiveDataChange(option)}
                 className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
               />
-              <span className="ml-2 text-sm text-gray-700 capitalize">
-                {option}
+              <span className="ml-2 text-sm text-gray-700">
+                {option.charAt(0).toUpperCase() + option.slice(1)}
               </span>
             </label>
           ))}

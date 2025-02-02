@@ -1,6 +1,4 @@
-```typescript
-import React from 'react';
-import { TrendingUp, MessageSquare, Users, CheckCircle } from 'lucide-react';
+import { TrendingUp, Clock } from 'lucide-react';
 
 interface FollowUpStats {
   responseRate: number;
@@ -94,4 +92,3 @@ export function FollowUpEffectiveness({ stats, className = '' }: FollowUpEffecti
     </div>
   );
 }
-```

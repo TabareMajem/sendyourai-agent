@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, Settings } from 'lucide-react';
 import { TriggerProps } from './types';
 

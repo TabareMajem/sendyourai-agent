@@ -1,20 +1,16 @@
-```typescript
 import { ZapierClient } from '../../zapier/ZapierClient';
 import { AIAgent } from '../../ai/AIAgent';
 import { TriggerManager } from '../../ai/TriggerManager';
-import { ShopifyClient } from '../integrations/ecommerce/ShopifyClient';
 
 export class PersonalizedShoppingWorkflow {
   private zapier: ZapierClient;
   private aiAgent: AIAgent;
   private triggerManager: TriggerManager;
-  private shopify: ShopifyClient;
 
-  constructor(zapier: ZapierClient, aiAgent: AIAgent, shopify: ShopifyClient) {
+  constructor(zapier: ZapierClient, aiAgent: AIAgent) {
     this.zapier = zapier;
     this.aiAgent = aiAgent;
     this.triggerManager = new TriggerManager(aiAgent);
-    this.shopify = shopify;
   }
 
   public async setup() {
@@ -66,8 +62,8 @@ export class PersonalizedShoppingWorkflow {
     const recommendations = await this.aiAgent.queueAction('analysis', {
       type: 'generate_recommendations',
       data: {
-        userProfile: analysis.userProfile,
-        preferences: analysis.preferences,
+        userProfile: analysis.payload,
+        preferences: analysis.payload,
         context: data.event
       }
     });
@@ -78,15 +74,15 @@ export class PersonalizedShoppingWorkflow {
       data: {
         userId: data.userId,
         recommendations,
-        userEngagement: analysis.engagement
+        userEngagement: analysis.payload
       }
     });
 
     // Execute delivery strategy
-    if (deliveryStrategy.method === 'email') {
+    if (deliveryStrategy.type === 'email') {
       await this.sendEmailRecommendations(data.userId, recommendations);
-    } else if (deliveryStrategy.method === 'web') {
-      await this.updateWebRecommendations(data.userId, recommendations);
+    } else if (deliveryStrategy.id === 'web') {
+      // await this.updateWebRecommendations(data.userId, recommendations);
     }
 
     // Track recommendation performance
@@ -95,7 +91,7 @@ export class PersonalizedShoppingWorkflow {
       data: {
         userId: data.userId,
         recommendations,
-        deliveryMethod: deliveryStrategy.method,
+        deliveryMethod: deliveryStrategy.id,
         timestamp: new Date()
       }
     });
@@ -121,8 +117,8 @@ export class PersonalizedShoppingWorkflow {
     });
   }
 
-  private async updateWebRecommendations(userId: string, recommendations: any) {
-    await this.shopify.updateCustomerRecommendations(userId, recommendations);
-  }
+  // private async updateWebRecommendations(userId: string, recommendations: any) {
+  //   await this.shopify.updateCustomerRecommendations(userId, recommendations);
+  // }
 }
-```
+

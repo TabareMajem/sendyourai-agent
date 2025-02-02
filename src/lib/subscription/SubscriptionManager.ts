@@ -1,4 +1,3 @@
-```typescript
 import { z } from 'zod';
 import { loadStripe } from '@stripe/stripe-js';
 
@@ -154,4 +153,3 @@ export class SubscriptionManager {
     return limitValue === -1 || value <= limitValue;
   }
 }
-```

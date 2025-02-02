@@ -1,5 +1,4 @@
-```typescript
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { X, Bot, Wand2, Settings, Database } from 'lucide-react';
 
 interface LeadGenerationConfigProps {
@@ -380,4 +379,3 @@ export function LeadGenerationConfig({ onClose, onSubmit }: LeadGenerationConfig
     </div>
   );
 }
-```

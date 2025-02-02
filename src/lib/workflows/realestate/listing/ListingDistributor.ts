@@ -1,4 +1,3 @@
-```typescript
 import { ZillowService } from '../services/ZillowService';
 import { Property } from '../utils/propertyUtils';
 import { AppError, ErrorCodes } from '../../../utils/errors';
@@ -19,7 +18,7 @@ export class ListingDistributor {
     });
 
     // Add more platforms as needed
-    this.platforms.set('realtor', async (property) => {
+    this.platforms.set('realtor', async () => {
       // Implementation for realtor.com
       return 'realtor-listing-id';
     });
@@ -55,4 +54,4 @@ export class ListingDistributor {
     };
   }
 }
-```
+

@@ -1,4 +1,3 @@
-```typescript
 import { AppError, ErrorCodes } from '../../utils/errors';
 
 export class LexisNexisService {
@@ -81,4 +80,4 @@ export class LexisNexisService {
     });
   }
 }
-```
+

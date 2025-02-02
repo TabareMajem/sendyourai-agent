@@ -1,4 +1,3 @@
-import React from 'react';
 import { Bot, Heart, Target, Shield, Zap, Users, Mail, Building } from 'lucide-react';
 import { Footer } from '../components/layout/Footer';
 

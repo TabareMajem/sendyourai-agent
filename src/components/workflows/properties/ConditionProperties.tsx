@@ -1,4 +1,3 @@
-import React from 'react';
 import { GitBranch, Plus, X } from 'lucide-react';
 
 interface ConditionPropertiesProps {

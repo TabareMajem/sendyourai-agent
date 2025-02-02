@@ -1,4 +1,3 @@
-```typescript
 import { AppError, ErrorCodes } from '../../utils/errors';
 
 export class ZendeskService {
@@ -143,4 +142,4 @@ export class ZendeskService {
     });
   }
 }
-```
+

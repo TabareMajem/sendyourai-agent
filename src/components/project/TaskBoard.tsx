@@ -1,6 +1,5 @@
-```typescript
 import React, { useState } from 'react';
-import { Plus, MoreVertical, Clock, User, AlertCircle } from 'lucide-react';
+import { Plus, MoreVertical, Clock} from 'lucide-react';
 
 interface Task {
   id: string;
@@ -28,7 +27,6 @@ export function TaskBoard({
   tasks,
   onTaskCreate,
   onTaskUpdate,
-  onTaskDelete
 }: TaskBoardProps) {
   const [showNewTaskForm, setShowNewTaskForm] = useState(false);
   const [newTask, setNewTask] = useState<Omit<Task, 'id'>>({
@@ -238,4 +236,3 @@ export function TaskBoard({
     </div>
   );
 }
-```

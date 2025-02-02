@@ -1,4 +1,4 @@
-```typescript
+
 import { Property } from '../utils/propertyUtils';
 import { AppError, ErrorCodes } from '../../../utils/errors';
 
@@ -62,4 +62,4 @@ export class ZillowService {
     return this.request(`/listings/${listingId}/analytics`);
   }
 }
-```
+

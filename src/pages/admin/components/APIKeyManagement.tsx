@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Key, Plus, Copy, Trash2, AlertTriangle } from 'lucide-react';
+import { useState } from 'react';
+import { Key, Plus, AlertTriangle } from 'lucide-react';
 import { APIKeyList } from './api-keys/APIKeyList';
 import { CreateKeyModal } from './api-keys/CreateKeyModal';
 import { APIKeyUsage } from './api-keys/APIKeyUsage';

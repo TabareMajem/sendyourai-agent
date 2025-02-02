@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Bot, Lightbulb, X } from 'lucide-react';
 
 interface AIAssistantProps {
@@ -6,7 +6,7 @@ interface AIAssistantProps {
   onSuggestion: (suggestion: any) => void;
 }
 
-export function AIAssistant({ workflow, onSuggestion }: AIAssistantProps) {
+export function AIAssistant({ onSuggestion }: AIAssistantProps) {
   const [isExpanded, setIsExpanded] = useState(true);
 
   const suggestions = [

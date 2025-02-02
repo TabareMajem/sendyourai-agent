@@ -1,4 +1,4 @@
-import { ProjectManagementProvider } from './types';
+import { ProjectManagementProvider } from '../types';
 
 export class TrelloClient implements ProjectManagementProvider {
   private apiKey: string;

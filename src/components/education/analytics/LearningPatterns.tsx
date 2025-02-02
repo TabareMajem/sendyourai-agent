@@ -1,5 +1,3 @@
-```typescript
-import React from 'react';
 import { Clock, Calendar, Brain, Target } from 'lucide-react';
 
 interface LearningPattern {
@@ -130,4 +128,3 @@ export function LearningPatterns({ patterns, className = '' }: LearningPatternsP
     </div>
   );
 }
-```

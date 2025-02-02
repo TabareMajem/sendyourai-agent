@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Building2, Key, AlertTriangle, Eye, EyeOff } from 'lucide-react';
 import { useSalesforce } from '../../../hooks/useSalesforce';
 

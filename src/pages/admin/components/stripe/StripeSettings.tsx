@@ -1,6 +1,5 @@
-```typescript
-import React, { useState } from 'react';
-import { CreditCard, Key, AlertTriangle, Eye, EyeOff } from 'lucide-react';
+import { useState } from 'react';
+import { CreditCard, AlertTriangle, Eye, EyeOff } from 'lucide-react';
 
 interface StripeSettingsProps {
   settings: {
@@ -161,4 +160,3 @@ export function StripeSettings({ settings, onUpdate }: StripeSettingsProps) {
     </div>
   );
 }
-```

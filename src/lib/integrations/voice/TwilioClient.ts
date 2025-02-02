@@ -6,9 +6,9 @@ export class TwilioClient {
 
   constructor(token: string) {
     this.device = new Device(token, {
-      codecPreferences: ['opus', 'pcmu'],
-      fakeLocalDTMF: true,
-      enableRingingState: true
+      // codecPreferences: ['opus', 'pcmu'],
+      // fakeLocalDTMF: true,
+      // enableRingingState: true
     });
   }
 

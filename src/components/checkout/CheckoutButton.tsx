@@ -1,4 +1,3 @@
-```typescript
 import React from 'react';
 import { useStripe } from '../../hooks/useStripe';
 
@@ -33,4 +32,3 @@ export function CheckoutButton({ priceId, children, className = '' }: CheckoutBu
     </button>
   );
 }
-```

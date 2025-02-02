@@ -1,4 +1,3 @@
-import React from 'react';
 import { TrendingUp, TrendingDown, AlertTriangle, Book } from 'lucide-react';
 
 interface StudentProgress {

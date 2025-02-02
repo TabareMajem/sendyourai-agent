@@ -1,5 +1,4 @@
-import React from 'react';
-import { Play, Clock, Users, Target, BarChart2 } from 'lucide-react';
+import { Play, Clock, Users, BarChart2 } from 'lucide-react';
 import { Project } from '../../../../lib/agents/pmo/types';
 
 interface ProjectCardProps {

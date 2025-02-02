@@ -1,15 +1,8 @@
-import React from 'react';
 import {
   Users,
-  GraduationCap,
   Stethoscope,
-  BadgeDollarSign,
-  HeadsetIcon,
-  Brain,
   Plane,
-  Palette,
   Building2,
-  BarChart3,
   DollarSign
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';

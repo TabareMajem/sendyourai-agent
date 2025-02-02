@@ -1,5 +1,3 @@
-```typescript
-import React from 'react';
 import { Lightbulb, ArrowRight, Clock, Target, Book } from 'lucide-react';
 
 interface Recommendation {
@@ -124,4 +122,3 @@ export function RecommendationsList({
     </div>
   );
 }
-```

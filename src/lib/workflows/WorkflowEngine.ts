@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
 import { Node, Edge } from 'reactflow';
 import { AIAgent } from '../ai/AIAgent';
 import { TriggerManager } from '../ai/TriggerManager';
@@ -73,10 +72,11 @@ export class WorkflowEngine {
 
   private async evaluateCondition(condition: any, context: any): Promise<boolean> {
     // Implement condition evaluation logic
+    console.log(condition, context);
     return true;
   }
 
-  public validateWorkflow(workflow: { nodes: Node[]; edges: Edge[] }): boolean {
+  public validateWorkflow(): boolean {
     // Implement workflow validation logic
     return true;
   }

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Play, Pause, Settings, Activity, Bot } from 'lucide-react';
 
 interface AgentCard {

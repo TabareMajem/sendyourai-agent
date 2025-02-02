@@ -1,5 +1,3 @@
-```typescript
-import React from 'react';
 import { Users, Clock, CheckCircle, AlertTriangle } from 'lucide-react';
 
 interface PatientMetrics {
@@ -85,4 +83,3 @@ export function PatientMetrics({ metrics, className = '' }: PatientMetricsProps)
     </div>
   );
 }
-```

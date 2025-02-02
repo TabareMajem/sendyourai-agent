@@ -1,20 +1,27 @@
-import React, { useState } from 'react';
-import { Brain, AlertTriangle } from 'lucide-react';
+import { useState } from 'react';
+import { AlertTriangle } from 'lucide-react';
+
+interface BehaviorConfig {
+  autonomyLevel: number;
+  decisionSpeed: number;
+  riskTolerance: number;
+  proactivityLevel: number;
+}
 
 export function BehaviorSettings() {
-  const [config, setConfig] = useState({
+  const [config, setConfig] = useState<BehaviorConfig>({
     autonomyLevel: 50,
     decisionSpeed: 70,
     riskTolerance: 30,
     proactivityLevel: 60
   });
 
-  const handleChange = (key: keyof typeof config, value: number) => {
+  const handleChange = (key: keyof BehaviorConfig, value: number) => {
     setConfig({ ...config, [key]: value });
   };
 
   const renderSlider = (
-    key: keyof typeof config,
+    key: keyof BehaviorConfig,
     label: string,
     description: string,
     lowLabel: string,

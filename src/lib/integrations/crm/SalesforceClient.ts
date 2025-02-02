@@ -1,5 +1,5 @@
 import jsforce from 'jsforce';
-import { CRMProvider } from './types';
+import { CRMProvider } from '../types';
 
 export class SalesforceClient implements CRMProvider {
   private connection: jsforce.Connection;

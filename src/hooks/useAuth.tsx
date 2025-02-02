@@ -49,7 +49,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     checkAuth();
   }, []);
 
-  const login = async (email: string, password: string) => {
+  const login = async () => {
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     localStorage.setItem('session', JSON.stringify({ user: mockUser }));

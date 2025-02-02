@@ -1,5 +1,4 @@
-```typescript
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Book, Search, Plus, Edit, Trash2 } from 'lucide-react';
 
 interface Article {
@@ -137,4 +136,4 @@ export function KnowledgeBase({
     </div>
   );
 }
-```
+

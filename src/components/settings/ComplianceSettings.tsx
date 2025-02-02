@@ -1,4 +1,3 @@
-import React from 'react';
 import { Shield, FileCheck, AlertTriangle, Info } from 'lucide-react';
 
 interface ComplianceSettingsProps {

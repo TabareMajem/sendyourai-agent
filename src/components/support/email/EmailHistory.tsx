@@ -1,5 +1,3 @@
-```typescript
-import React from 'react';
 import { Mail, Clock, CheckCircle, AlertCircle, Download } from 'lucide-react';
 
 interface EmailRecord {
@@ -114,4 +112,4 @@ export function EmailHistory({
     </div>
   );
 }
-```
+

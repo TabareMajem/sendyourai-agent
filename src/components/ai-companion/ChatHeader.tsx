@@ -1,4 +1,3 @@
-import React from 'react';
 import { Bot, Info, Settings } from 'lucide-react';
 
 interface ChatHeaderProps {

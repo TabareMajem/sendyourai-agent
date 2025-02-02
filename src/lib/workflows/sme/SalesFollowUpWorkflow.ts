@@ -1,4 +1,3 @@
-```typescript
 import { ZapierClient } from '../../zapier/ZapierClient';
 import { AIAgent } from '../../ai/AIAgent';
 import { TriggerManager } from '../../ai/TriggerManager';
@@ -57,8 +56,8 @@ export class SalesFollowUpWorkflow {
       type: 'mailchimp_campaign',
       data: {
         to: lead.email,
-        subject: emailContent.subject,
-        content: emailContent.body,
+        // subject: emailContent.subject,
+        // content: emailContent.body,
         templateId: 'sales-follow-up'
       }
     });
@@ -68,7 +67,7 @@ export class SalesFollowUpWorkflow {
       type: 'create_task',
       data: {
         title: `Follow up with ${lead.name} from ${lead.company}`,
-        description: `Lead Source: ${lead.source}\nInterests: ${lead.interests.join(', ')}\nEmail sent: ${emailContent.subject}`,
+        // description: `Lead Source: ${lead.source}\nInterests: ${lead.interests.join(', ')}\nEmail sent: ${emailContent.subject}`,
         dueDate: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000), // 2 days from now
         assignee: 'sales-team',
         project: 'sales-follow-ups'
@@ -88,4 +87,4 @@ export class SalesFollowUpWorkflow {
     });
   }
 }
-```
+

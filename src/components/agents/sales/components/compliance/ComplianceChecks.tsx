@@ -1,5 +1,4 @@
-import React from 'react';
-import { Shield, AlertTriangle, CheckCircle, RefreshCw } from 'lucide-react';
+import { Shield, AlertTriangle, CheckCircle, RefreshCw, Clock } from 'lucide-react';
 
 interface ComplianceCheck {
   id: string;

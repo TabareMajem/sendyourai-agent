@@ -68,8 +68,8 @@ export class SalesforceService {
       this.auth = {
         accessToken: response.access_token,
         refreshToken: response.refresh_token || this.config.refreshToken!,
-        instanceUrl: response.instance_url,
-        expiresAt: new Date(Date.now() + (response.expires_in * 1000))
+        instanceUrl: '',
+        expiresAt: new Date(Date.now() + (20 * 1000))
       };
 
       this.connection.accessToken = this.auth.accessToken;
@@ -294,8 +294,8 @@ export class SalesforceService {
       this.auth = {
         accessToken: response.access_token,
         refreshToken: response.refresh_token,
-        instanceUrl: response.instance_url,
-        expiresAt: new Date(Date.now() + (response.expires_in * 1000))
+        instanceUrl: '',
+        expiresAt: new Date(Date.now() + (20 * 1000))
       };
 
       this.connection.accessToken = this.auth.accessToken;

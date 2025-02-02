@@ -1,4 +1,3 @@
-import React from 'react';
 import { Zap, GitBranch, Puzzle, BrainCircuit } from 'lucide-react';
 
 export function Features() {

@@ -1,7 +1,5 @@
-```typescript
-import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { Clock, Phone, PhoneOff, TrendingUp } from 'lucide-react';
+import { Clock, Phone, TrendingUp } from 'lucide-react';
 
 interface CallMetrics {
   totalCalls: number;
@@ -71,4 +69,4 @@ export function VoiceCallMetrics({ metrics }: VoiceCallMetricsProps) {
     </div>
   );
 }
-```
+

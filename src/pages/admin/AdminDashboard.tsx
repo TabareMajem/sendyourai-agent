@@ -1,4 +1,3 @@
-import React from 'react';
 import { DashboardLayout } from '../../components/dashboard/DashboardLayout';
 import { AdminStats } from './components/AdminStats';
 import { UserManagement } from './components/UserManagement';
@@ -7,7 +6,6 @@ import { APIKeyManagement } from './components/APIKeyManagement';
 import { SystemHealth } from './components/SystemHealth';
 import { AnalyticsOverview } from './components/AnalyticsOverview';
 import { TeamMembers } from './components/TeamMembers';
-import { UserProfile } from './components/UserProfile';
 
 export function AdminDashboard() {
   return (

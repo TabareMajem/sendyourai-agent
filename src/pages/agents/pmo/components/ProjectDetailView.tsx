@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { X, Calendar, Users, Target, Clock, AlertTriangle, CheckCircle, ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { X, Users, Target, Clock, AlertTriangle, CheckCircle, ArrowRight } from 'lucide-react';
 import { Project } from '../../../../lib/agents/pmo/types';
 import { PMOManager } from '../../../../lib/agents/pmo/PMOManager';
 import { ProjectTimeline } from './project-details/ProjectTimeline';

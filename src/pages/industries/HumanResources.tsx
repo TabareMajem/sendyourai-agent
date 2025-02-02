@@ -1,4 +1,3 @@
-import React from 'react';
 import { Users, CheckCircle, Calendar, Brain } from 'lucide-react';
 import { UseCaseLayout } from '../../components/use-cases/UseCaseLayout';
 import { ChallengesSolutions } from '../../components/use-cases/ChallengesSolutions';

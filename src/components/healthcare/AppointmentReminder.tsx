@@ -1,6 +1,4 @@
-```typescript
-import React from 'react';
-import { Calendar, Clock, MapPin, User, AlertCircle, CheckCircle } from 'lucide-react';
+import { Calendar, Clock, MapPin, User, AlertCircle, CheckCircle, MessageSquare, Mail } from 'lucide-react';
 
 interface AppointmentInfo {
   id: string;
@@ -41,18 +39,6 @@ export function AppointmentReminder({
         {status.charAt(0).toUpperCase() + status.slice(1)}
       </span>
     );
-  };
-
-  const timeUntilAppointment = () => {
-    const now = new Date();
-    const diff = appointment.date.getTime() - now.getTime();
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    
-    if (days > 0) {
-      return `${days} day${days > 1 ? 's' : ''} away`;
-    }
-    return `${hours} hour${hours > 1 ? 's' : ''} away`;
   };
 
   return (
@@ -175,4 +161,3 @@ export function AppointmentReminder({
     </div>
   );
 }
-```

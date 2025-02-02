@@ -1,5 +1,4 @@
-import React from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { PieChart, Pie, ResponsiveContainer, Tooltip } from 'recharts';
 import { ArrowRight } from 'lucide-react';
 
 interface WorkflowAnalyticsProps {
@@ -60,9 +59,9 @@ export function WorkflowAnalytics({ data }: WorkflowAnalyticsProps) {
                   paddingAngle={5}
                   dataKey="value"
                 >
-                  {data.workflowTypes.map((entry, index) => (
+                  {/* {data.workflowTypes.map((index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                  ))}
+                  ))} */}
                 </Pie>
                 <Tooltip />
               </PieChart>

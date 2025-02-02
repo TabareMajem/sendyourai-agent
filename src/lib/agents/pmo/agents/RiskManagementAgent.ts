@@ -1,4 +1,16 @@
+import { z } from 'zod';
 import { AIAgent } from '../../../ai/AIAgent';
+
+// Define the schema for the risk assessment
+const RiskAssessmentSchema = z.array(
+  z.object({
+    description: z.string(),
+    impact: z.enum(['high', 'medium', 'low']),
+    probability: z.enum(['high', 'medium', 'low']),
+    mitigation: z.string(),
+    status: z.enum(['identified', 'mitigated', 'occurred']),
+  })
+);
 
 export class RiskManagementAgent {
   constructor(private aiAgent: AIAgent) {}
@@ -15,7 +27,7 @@ export class RiskManagementAgent {
     mitigation: string;
     status: 'identified' | 'mitigated' | 'occurred';
   }>> {
-    return this.aiAgent.queueAction('analysis', {
+    const result = await this.aiAgent.queueAction('analysis', {
       type: 'risk_assessment',
       data: {
         projectScope: input.scope,
@@ -24,6 +36,11 @@ export class RiskManagementAgent {
         resources: input.resources
       }
     });
+
+    // Validate the payload using the RiskAssessmentSchema
+    const validatedPayload = RiskAssessmentSchema.parse(result.payload);
+
+    return validatedPayload;
   }
 
   public async monitorRisks(projectId: string): Promise<any> {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrainCircuit, Zap, Shield, Settings } from 'lucide-react';
 
 interface AISettingsProps {

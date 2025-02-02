@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Settings, RefreshCw } from 'lucide-react';
+import { useState } from 'react';
+import { Settings } from 'lucide-react';
 
 interface IntegrationSettingsProps {
   integrations: any[];
@@ -9,10 +9,7 @@ interface IntegrationSettingsProps {
 }
 
 export function IntegrationSettings({
-  integrations,
-  onConnect,
-  onDisconnect,
-  onUpdateConfig
+
 }: IntegrationSettingsProps) {
   const [activeTab, setActiveTab] = useState('crm');
 

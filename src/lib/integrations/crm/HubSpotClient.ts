@@ -7,27 +7,67 @@ export class HubSpotClient {
     this.client = new Client({ accessToken: apiKey });
   }
 
+  // async createContact(properties: Record<string, string | number | boolean>) {
+  //   return this.client.crm.contacts.basicApi.create({
+  //     properties
+  //   });
+  // }
+
+  // async updateContact(contactId: string, properties: Record<string, string | number | boolean>) {
+  //   return this.client.crm.contacts.basicApi.update(contactId, {
+  //     properties
+  //   });
+  // }
+
+  // async createDeal(properties: Record<string, string | number | boolean>) {
+  //   return this.client.crm.deals.basicApi.create({
+  //     properties
+  //   });
+  // }
+
+  // async updateDeal(dealId: string, properties: Record<string, string | number | boolean>) {
+  //   return this.client.crm.deals.basicApi.update(dealId, {
+  //     properties
+  //   });
+  // }
+
   async createContact(properties: Record<string, string | number | boolean>) {
+    const formattedProperties = Object.fromEntries(
+      Object.entries(properties).map(([key, value]) => [key, String(value)])
+    );
+  
     return this.client.crm.contacts.basicApi.create({
-      properties
+      properties: formattedProperties
     });
   }
-
+  
   async updateContact(contactId: string, properties: Record<string, string | number | boolean>) {
+    const formattedProperties = Object.fromEntries(
+      Object.entries(properties).map(([key, value]) => [key, String(value)])
+    );
+  
     return this.client.crm.contacts.basicApi.update(contactId, {
-      properties
+      properties: formattedProperties
     });
   }
-
+  
   async createDeal(properties: Record<string, string | number | boolean>) {
+    const formattedProperties = Object.fromEntries(
+      Object.entries(properties).map(([key, value]) => [key, String(value)])
+    );
+  
     return this.client.crm.deals.basicApi.create({
-      properties
+      properties: formattedProperties
     });
   }
-
+  
   async updateDeal(dealId: string, properties: Record<string, string | number | boolean>) {
+    const formattedProperties = Object.fromEntries(
+      Object.entries(properties).map(([key, value]) => [key, String(value)])
+    );
+  
     return this.client.crm.deals.basicApi.update(dealId, {
-      properties
+      properties: formattedProperties
     });
   }
 

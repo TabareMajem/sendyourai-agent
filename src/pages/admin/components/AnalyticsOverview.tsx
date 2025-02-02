@@ -1,4 +1,3 @@
-import React from 'react';
 import { BarChart2, TrendingUp, Users, Clock } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 

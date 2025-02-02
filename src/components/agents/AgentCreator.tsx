@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plus, Bot, Wand2, X } from 'lucide-react';
+import { Bot, Wand2, X } from 'lucide-react';
 
 interface AgentTemplate {
   id: string;

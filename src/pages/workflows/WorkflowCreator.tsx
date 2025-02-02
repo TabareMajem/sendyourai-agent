@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ReactFlowProvider } from 'reactflow';
 import { DashboardLayout } from '../../components/dashboard/DashboardLayout';
 import { WorkflowCanvas } from '../../components/workflows/WorkflowCanvas';

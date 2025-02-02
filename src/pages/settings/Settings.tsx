@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DashboardLayout } from '../../components/dashboard/DashboardLayout';
 import { SettingsSidebar } from '../../components/settings/SettingsSidebar';
 import { AccountSettings } from '../../components/settings/AccountSettings';

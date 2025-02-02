@@ -1,5 +1,4 @@
-```typescript
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { ZapierClient } from '../lib/zapier/ZapierClient';
 import { AIAgent } from '../lib/ai/AIAgent';
 import { CustomerSupportWorkflow } from '../lib/workflows/sme/CustomerSupportWorkflow';
@@ -41,4 +40,4 @@ export function useSMEWorkflows() {
     processNewLead
   };
 }
-```
+

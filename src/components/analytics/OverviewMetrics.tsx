@@ -1,4 +1,3 @@
-import React from 'react';
 import { TrendingUp, Clock, CheckCircle, DollarSign, Zap } from 'lucide-react';
 
 interface OverviewMetricsProps {

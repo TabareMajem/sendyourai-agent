@@ -1,5 +1,4 @@
-import React from 'react';
-import { Play, Pause, AlertTriangle, Clock, CheckCircle, Users } from 'lucide-react';
+import { CheckCircle, Users } from 'lucide-react';
 
 interface WorkflowListProps {
   workflows: any[];
@@ -16,18 +15,12 @@ export function WorkflowList({
   onWorkflowSelect,
   onWorkflowsSelect
 }: WorkflowListProps) {
-  const statusIcons = {
-    active: { icon: Play, className: 'text-green-500' },
-    paused: { icon: Pause, className: 'text-yellow-500' },
-    error: { icon: AlertTriangle, className: 'text-red-500' },
-    draft: { icon: Clock, className: 'text-gray-500' }
-  };
-
+  
   if (viewMode === 'grid') {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {workflows.map((workflow) => {
-          const StatusIcon = statusIcons[workflow.status].icon;
+          // const StatusIcon = statusIcons[workflow.status].icon;
           const isSelected = selectedWorkflows.includes(workflow.id);
 
           return (
@@ -59,7 +52,7 @@ export function WorkflowList({
               </div>
 
               <div className="flex items-center space-x-3 mb-4">
-                <StatusIcon className={`w-5 h-5 ${statusIcons[workflow.status].className}`} />
+                {/* <StatusIcon className={`w-5 h-5 ${statusIcons[workflow.status].className}`} /> */}
                 <h3 className="text-lg font-medium text-gray-900">{workflow.name}</h3>
               </div>
 
@@ -129,7 +122,7 @@ export function WorkflowList({
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
           {workflows.map((workflow) => {
-            const StatusIcon = statusIcons[workflow.status].icon;
+            // const StatusIcon = statusIcons[workflow.status].icon;
             const isSelected = selectedWorkflows.includes(workflow.id);
 
             return (
@@ -168,7 +161,7 @@ export function WorkflowList({
                 </td>
                 <td className="px-6 py-4">
                   <div className="flex items-center">
-                    <StatusIcon className={`w-5 h-5 mr-2 ${statusIcons[workflow.status].className}`} />
+                    {/* <StatusIcon className={`w-5 h-5 mr-2 ${statusIcons[workflow.status].className}`} /> */}
                     <span className="text-sm text-gray-900 capitalize">
                       {workflow.status}
                     </span>

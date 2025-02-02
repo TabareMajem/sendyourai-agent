@@ -1,4 +1,3 @@
-import React from 'react';
 import { FileText, Settings } from 'lucide-react';
 import { TriggerProps } from './types';
 

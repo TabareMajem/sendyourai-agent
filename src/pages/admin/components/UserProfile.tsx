@@ -1,5 +1,4 @@
-import React from 'react';
-import { User, Mail, Building2, MapPin } from 'lucide-react';
+import { Mail, Building2, MapPin } from 'lucide-react';
 
 interface UserProfileProps {
   user: {

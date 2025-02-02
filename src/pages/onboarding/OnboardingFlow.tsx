@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { OnboardingLayout } from '../../components/onboarding/OnboardingLayout';
 import { IndustrySelection } from '../../components/onboarding/IndustrySelection';

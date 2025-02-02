@@ -14,12 +14,12 @@ export class ProactiveAgent {
     this.confidenceThreshold = confidenceThreshold;
   }
 
-  public async analyzeSituation(context: Record<string, unknown>): Promise<void> {
+  public async analyzeSituation(): Promise<void> {
     if (!this.learningEnabled) return;
 
     try {
       // Analyze current context and determine if action is needed
-      const analysis = await this.performContextAnalysis(context);
+      const analysis = await this.performContextAnalysis();
       
       if (analysis.confidence >= this.confidenceThreshold) {
         await this.takeSuggestedAction(analysis.suggestion);
@@ -29,7 +29,7 @@ export class ProactiveAgent {
     }
   }
 
-  private async performContextAnalysis(context: Record<string, unknown>): Promise<{
+  private async performContextAnalysis(): Promise<{
     confidence: number;
     suggestion: {
       type: string;

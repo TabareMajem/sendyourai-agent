@@ -1,4 +1,3 @@
-```typescript
 import { ZapierClient } from '../../zapier/ZapierClient';
 
 export async function setupClientOnboardingWorkflow(
@@ -92,4 +91,4 @@ export async function setupDocumentDraftingWorkflow(
     }
   };
 }
-```
+

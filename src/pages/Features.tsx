@@ -1,23 +1,16 @@
-import React from 'react';
 import {
-  Bot,
-  Zap,
-  GitBranch,
   Puzzle,
   BrainCircuit,
   Shield,
-  Laptop,
   ArrowRight,
   CheckCircle,
   Workflow,
-  Settings,
   Lock,
   Gauge,
   Network,
   FileCode,
   MessageSquare
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { Footer } from '../components/layout/Footer';
 
 const features = [

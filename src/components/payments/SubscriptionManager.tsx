@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { CreditCard, Calendar, AlertTriangle, CheckCircle } from 'lucide-react';
+import { useState } from 'react';
+import { CreditCard, AlertTriangle, CheckCircle } from 'lucide-react';
 import { PaymentMethodForm } from './PaymentMethodForm';
 import type { Subscription, PaymentMethod } from '../../lib/stripe/types';
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Settings, Brain, Shield, Sliders, MessageSquare } from 'lucide-react';
 import { BehaviorSettings } from './BehaviorSettings';
 import { SecuritySettings } from './SecuritySettings';

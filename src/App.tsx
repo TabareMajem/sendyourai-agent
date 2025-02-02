@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Features } from './pages/Features';
@@ -31,7 +30,6 @@ import { Healthcare } from './pages/industries/Healthcare';
 import { RealEstate } from './pages/industries/RealEstate';
 import { Ecommerce } from './pages/industries/Ecommerce';
 import { Fitness } from './pages/industries/Fitness';
-import AISettings from './pages/settings/AISettings';
 
 export default function App() {
   return (
@@ -72,7 +70,6 @@ export default function App() {
       <Route path="/integrations" element={<IntegrationSetup />} />
       <Route path="/integrations/zapier" element={<ZapierDashboard />} />
       <Route path="/settings" element={<Settings />} />
-      <Route path="/settings/ai" element={<AISettings />} />
       <Route path="/onboarding" element={<OnboardingFlow />} />
 
       {/* Admin Routes */}

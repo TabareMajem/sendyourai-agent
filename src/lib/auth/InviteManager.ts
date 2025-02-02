@@ -1,4 +1,3 @@
-```typescript
 import { TokenGenerator, Token } from './TokenGenerator';
 
 export class InviteManager {
@@ -75,4 +74,3 @@ export class InviteManager {
     }
   }
 }
-```

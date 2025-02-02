@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Search, Filter, X, Plus } from 'lucide-react';
+import { useState } from 'react';
+import { Search, X, Plus } from 'lucide-react';
 
 interface SearchFilter {
   field: string;

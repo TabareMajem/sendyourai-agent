@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Bot, Settings, AlertTriangle } from 'lucide-react';
 
 interface ZapierConfigProps {

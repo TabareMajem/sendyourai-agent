@@ -1,5 +1,4 @@
-```typescript
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FileText, MessageSquare, Tag, ThumbsUp, ThumbsDown, Flag } from 'lucide-react';
 
 interface ReviewComment {
@@ -24,7 +23,6 @@ interface DocumentReviewProps {
 }
 
 export function DocumentReviewInterface({
-  documentId,
   content,
   comments,
   onAddComment,
@@ -186,4 +184,4 @@ export function DocumentReviewInterface({
     </div>
   );
 }
-```
+

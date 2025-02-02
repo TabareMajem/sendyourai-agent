@@ -1,4 +1,3 @@
-```typescript
 import { useState, useEffect } from 'react';
 import { StripeClient } from '../lib/stripe/StripeClient';
 
@@ -49,4 +48,3 @@ export function useStripe() {
     createCheckoutSession
   };
 }
-```

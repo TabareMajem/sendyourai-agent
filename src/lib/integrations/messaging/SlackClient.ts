@@ -1,4 +1,4 @@
-import { MessagingProvider } from './types';
+import { MessagingProvider } from '../types';
 import { AppError, ErrorCodes } from '../../utils/errors';
 
 export class SlackClient implements MessagingProvider {

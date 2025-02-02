@@ -7,7 +7,6 @@ import ReactFlow, {
   Edge,
   Node,
   NodeTypes,
-  useReactFlow
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 
@@ -35,7 +34,7 @@ export function WorkflowCanvas({
   onWorkflowChange,
   onElementSelect
 }: WorkflowCanvasProps) {
-  const { project } = useReactFlow();
+  // const { } = useReactFlow();
 
   const onConnect = useCallback((params: Connection) => {
     const newEdge = {
@@ -50,7 +49,7 @@ export function WorkflowCanvas({
     });
   }, [workflow, onWorkflowChange]);
 
-  const onNodeDragStop = useCallback((event: React.MouseEvent, node: Node) => {
+  const onNodeDragStop = useCallback((_event: React.MouseEvent, node: Node) => {
     const updatedNodes = workflow.nodes.map((n) => {
       if (n.id === node.id) {
         return { ...n, position: node.position };
@@ -63,7 +62,7 @@ export function WorkflowCanvas({
     });
   }, [workflow, onWorkflowChange]);
 
-  const onNodeClick = useCallback((event: React.MouseEvent, node: Node) => {
+  const onNodeClick = useCallback((_event: React.MouseEvent, node: Node) => {
     onElementSelect(node);
   }, [onElementSelect]);
 

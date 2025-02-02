@@ -2,16 +2,16 @@ import { ZapierClient } from '../../zapier/ZapierClient';
 import { AIAgent } from '../../ai/AIAgent';
 import { WorkoutPlanWorkflow } from './WorkoutPlanWorkflow';
 import { NutritionPlanWorkflow } from './NutritionPlanWorkflow';
-import { FitbitClient } from '../../integrations/fitness/FitbitClient';
-import { MyFitnessPalClient } from '../../integrations/fitness/MyFitnessPalClient';
+// import { FitbitClient } from '../../integrations/fitness/FitbitClient';
+// import { MyFitnessPalClient } from '../../integrations/fitness/MyFitnessPalClient';
 
 export class FitnessWorkflowManager {
   private zapier: ZapierClient;
   private aiAgent: AIAgent;
   private workoutPlanWorkflow: WorkoutPlanWorkflow;
   private nutritionPlanWorkflow: NutritionPlanWorkflow;
-  private fitbit: FitbitClient;
-  private myFitnessPal: MyFitnessPalClient;
+  // private fitbit: FitbitClient;
+  // private myFitnessPal: MyFitnessPalClient;
 
   constructor(config: {
     zapierAuth: { apiKey: string; accountId: string };
@@ -20,8 +20,8 @@ export class FitnessWorkflowManager {
   }) {
     this.zapier = new ZapierClient(config.zapierAuth);
     this.aiAgent = new AIAgent();
-    this.fitbit = new FitbitClient({ apiKey: config.fitbitApiKey });
-    this.myFitnessPal = new MyFitnessPalClient({ apiKey: config.myFitnessPalApiKey });
+    // this.fitbit = new FitbitClient({ apiKey: config.fitbitApiKey });
+    // this.myFitnessPal = new MyFitnessPalClient({ apiKey: config.myFitnessPalApiKey });
 
     this.workoutPlanWorkflow = new WorkoutPlanWorkflow(this.zapier, this.aiAgent);
     this.nutritionPlanWorkflow = new NutritionPlanWorkflow(this.zapier, this.aiAgent);
@@ -59,7 +59,7 @@ export class FitnessWorkflowManager {
     await this.nutritionPlanWorkflow.trackMeal(data);
   }
 
-  public async getAnalytics(clientId: string) {
+  public async getAnalytics() {
     // Implement analytics collection
     const analytics = {
       workouts: {

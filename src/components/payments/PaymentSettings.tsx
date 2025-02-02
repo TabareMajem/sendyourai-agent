@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { CreditCard, Bell, Settings, AlertTriangle } from 'lucide-react';
+import { useState } from 'react';
+import { Settings, AlertTriangle } from 'lucide-react';
 
 interface PaymentSettingsProps {
   settings: {
@@ -12,7 +12,7 @@ interface PaymentSettingsProps {
 }
 
 export function PaymentSettings({ settings, onUpdate }: PaymentSettingsProps) {
-  const [isUpdating, setIsUpdating] = useState(false);
+  const [, setIsUpdating] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handleUpdate = async (updates: Partial<typeof settings>) => {

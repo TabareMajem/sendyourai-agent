@@ -1,20 +1,16 @@
-```typescript
 import { ZapierClient } from '../../zapier/ZapierClient';
 import { AIAgent } from '../../ai/AIAgent';
 import { TriggerManager } from '../../ai/TriggerManager';
-import { ShopifyClient } from '../integrations/ecommerce/ShopifyClient';
 
 export class ChatbotSupportWorkflow {
   private zapier: ZapierClient;
   private aiAgent: AIAgent;
   private triggerManager: TriggerManager;
-  private shopify: ShopifyClient;
 
-  constructor(zapier: ZapierClient, aiAgent: AIAgent, shopify: ShopifyClient) {
+  constructor(zapier: ZapierClient, aiAgent: AIAgent) {
     this.zapier = zapier;
     this.aiAgent = aiAgent;
     this.triggerManager = new TriggerManager(aiAgent);
-    this.shopify = shopify;
   }
 
   public async setup() {
@@ -58,7 +54,7 @@ export class ChatbotSupportWorkflow {
     });
 
     // Check if human intervention is needed
-    if (analysis.requiresHuman) {
+    if (analysis.payload) {
       return this.escalateToHuman(message, analysis);
     }
 
@@ -67,8 +63,8 @@ export class ChatbotSupportWorkflow {
       type: 'generate_response',
       data: {
         analysis,
-        userContext: await this.getUserContext(message.userId),
-        responseType: analysis.suggestedResponseType
+        // userContext: await this.getUserContext(message.userId),
+        responseType: analysis.type
       }
     });
 
@@ -90,7 +86,7 @@ export class ChatbotSupportWorkflow {
         userId: message.userId,
         interaction: {
           type: 'chat',
-          intent: analysis.intent,
+          intent: analysis.payload,
           wasEscalated: false,
           timestamp: new Date()
         }
@@ -109,7 +105,7 @@ export class ChatbotSupportWorkflow {
         reason: analysis.escalationReason,
         priority: analysis.priority,
         context: {
-          customerHistory: await this.getUserContext(message.userId),
+          // customerHistory: await this.getUserContext(message.userId),
           chatHistory: message.context?.previousMessages,
           analysis
         }
@@ -123,7 +119,7 @@ export class ChatbotSupportWorkflow {
         sessionId: message.sessionId,
         response: {
           type: 'escalation_notice',
-          estimatedWaitTime: escalation.estimatedWaitTime
+          estimatedWaitTime: escalation.payload
         }
       }
     });
@@ -131,17 +127,16 @@ export class ChatbotSupportWorkflow {
     return escalation;
   }
 
-  private async getUserContext(userId: string) {
-    const [orders, customerInfo] = await Promise.all([
-      this.shopify.getCustomerOrders(userId),
-      this.shopify.getCustomer(userId)
-    ]);
+  // private async getUserContext(userId: string) {
+  //   const [orders, customerInfo] = await Promise.all([
+  //     this.shopify.getCustomerOrders(userId),
+  //     this.shopify.getCustomer(userId)
+  //   ]);
 
-    return {
-      orders: orders.slice(0, 5), // Last 5 orders
-      customerInfo,
-      preferences: await this.shopify.getCustomerPreferences(userId)
-    };
-  }
+  //   return {
+  //     orders: orders.slice(0, 5), // Last 5 orders
+  //     customerInfo,
+  //     preferences: await this.shopify.getCustomerPreferences(userId)
+  //   };
+  // }
 }
-```

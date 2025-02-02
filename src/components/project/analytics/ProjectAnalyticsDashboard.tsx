@@ -1,5 +1,3 @@
-```typescript
-import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { TrendingUp, Clock, Users, AlertTriangle, CheckCircle } from 'lucide-react';
 
@@ -212,4 +210,4 @@ export function ProjectAnalyticsDashboard({ analytics }: ProjectAnalyticsDashboa
     </div>
   );
 }
-```
+

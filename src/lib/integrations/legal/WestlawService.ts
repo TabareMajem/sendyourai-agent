@@ -1,4 +1,3 @@
-```typescript
 import { AppError, ErrorCodes } from '../../utils/errors';
 
 export class WestlawService {
@@ -79,4 +78,4 @@ export class WestlawService {
     return this.request(`/shepards/${encodeURIComponent(citation)}`);
   }
 }
-```
+

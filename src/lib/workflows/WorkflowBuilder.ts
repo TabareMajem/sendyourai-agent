@@ -112,7 +112,7 @@ export class WorkflowBuilder {
           service: integration,
           type: 'test',
           config: {}
-        }, {});
+        },);
       } catch (error) {
         errors.push(`Failed to validate ${integration} integration`);
       }

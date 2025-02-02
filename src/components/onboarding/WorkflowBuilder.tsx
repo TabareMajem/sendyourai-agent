@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ArrowRight, Plus, Settings, Trash2, X } from 'lucide-react';
 
 interface WorkflowStep {
@@ -57,7 +57,7 @@ interface WorkflowBuilderProps {
   onWorkflowCreate: (workflow: WorkflowStep[]) => void;
 }
 
-export function WorkflowBuilder({ selectedIndustry, onWorkflowCreate }: WorkflowBuilderProps) {
+export function WorkflowBuilder({  }: WorkflowBuilderProps) {
   const [workflowSteps, setWorkflowSteps] = useState<WorkflowStep[]>([]);
   const [showStepPicker, setShowStepPicker] = useState(false);
   const [stepType, setStepType] = useState<'trigger' | 'action'>('trigger');

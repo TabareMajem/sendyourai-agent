@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Users, UserPlus, Mail, Shield, X } from 'lucide-react';
+import { UserPlus, X } from 'lucide-react';
 
 interface TeamSettingsProps {
   settings: any;
   onUpdate: (section: string, data: any) => void;
 }
 
-export function TeamSettings({ settings, onUpdate }: TeamSettingsProps) {
+export function TeamSettings({  }: TeamSettingsProps) {
   const [inviteEmail, setInviteEmail] = useState('');
   const [inviteRole, setInviteRole] = useState('member');
 

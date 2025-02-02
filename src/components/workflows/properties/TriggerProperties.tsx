@@ -1,4 +1,3 @@
-import React from 'react';
 import { Calendar, Mail, MessageSquare } from 'lucide-react';
 
 interface TriggerPropertiesProps {

@@ -1,5 +1,3 @@
-```typescript
-import React from 'react';
 import { Book, TrendingUp, TrendingDown } from 'lucide-react';
 
 interface SubjectData {
@@ -94,4 +92,3 @@ export function SubjectPerformance({ subjects, className = '' }: SubjectPerforma
     </div>
   );
 }
-```

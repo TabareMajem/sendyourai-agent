@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Sliders, BrainCircuit, Zap, Shield } from 'lucide-react';
 
 interface AIConfigOption {
@@ -53,9 +52,6 @@ interface AIConfigurationProps {
 export function AIConfiguration({
   config,
   onConfigChange,
-  industry,
-  approach,
-  goals
 }: AIConfigurationProps) {
   const handleConfigChange = (id: string, value: any) => {
     const newConfig = { ...config, [id]: value };

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Activity, AlertTriangle, CheckCircle } from 'lucide-react';
 
 interface PerformanceMetrics {

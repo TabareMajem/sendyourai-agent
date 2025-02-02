@@ -1,4 +1,3 @@
-typescript
 import React from 'react';
 import { useSubscription } from '../../hooks/useSubscription';
 import { AlertTriangle, Lock } from 'lucide-react';
@@ -11,7 +10,7 @@ interface FeatureLimitProps {
 }
 
 export function FeatureLimit({ feature, limit, current, children }: FeatureLimitProps) {
-  const { subscription, checkFeature, checkLimit, plans } = useSubscription();
+  const { checkFeature, checkLimit } = useSubscription();
 
   if (!checkFeature(feature)) {
     return (
@@ -53,4 +52,4 @@ export function FeatureLimit({ feature, limit, current, children }: FeatureLimit
 
   return <>{children}</>;
 }
-```
+

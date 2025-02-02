@@ -1,4 +1,5 @@
 import { MailService } from '@sendgrid/mail';
+import type { MailDataRequired } from '@sendgrid/mail';
 
 export class SendGridClient {
   private client: MailService;
@@ -17,16 +18,29 @@ export class SendGridClient {
     templateId?: string;
     dynamicTemplateData?: Record<string, any>;
   }) {
-    return this.client.send({
+    if (!params.text && !params.html) {
+      throw new Error('Either text or html content must be provided.');
+    }
+  
+    const mailData: MailDataRequired = {
       to: params.to,
       from: params.from,
       subject: params.subject,
-      text: params.text,
-      html: params.html,
-      templateId: params.templateId,
-      dynamicTemplateData: params.dynamicTemplateData
-    });
+      content: params.text
+        ? [{ type: 'text/plain', value: params.text }]
+        : [{ type: 'text/html', value: params.html! }]
+    };
+  
+    if (params.templateId) {
+      mailData.templateId = params.templateId;
+      if (params.dynamicTemplateData) {
+        mailData.dynamicTemplateData = params.dynamicTemplateData;
+      }
+    }
+  
+    return this.client.send(mailData);
   }
+  
 
   async sendBulkEmails(params: {
     to: string[];
@@ -37,16 +51,31 @@ export class SendGridClient {
     templateId?: string;
     dynamicTemplateData?: Record<string, any>;
   }) {
-    const messages = params.to.map(recipient => ({
-      to: recipient,
-      from: params.from,
-      subject: params.subject,
-      text: params.text,
-      html: params.html,
-      templateId: params.templateId,
-      dynamicTemplateData: params.dynamicTemplateData
-    }));
-
+    if (!params.text && !params.html) {
+      throw new Error('Either text or html content must be provided.');
+    }
+  
+    const messages: MailDataRequired[] = params.to.map((recipient) => {
+      const mailData: MailDataRequired = {
+        to: recipient,
+        from: params.from,
+        subject: params.subject,
+        content: params.text
+          ? [{ type: 'text/plain', value: params.text }]
+          : [{ type: 'text/html', value: params.html! }]
+      };
+  
+      if (params.templateId) {
+        mailData.templateId = params.templateId;
+        if (params.dynamicTemplateData) {
+          mailData.dynamicTemplateData = params.dynamicTemplateData;
+        }
+      }
+  
+      return mailData;
+    });
+  
     return this.client.send(messages);
   }
+  
 }

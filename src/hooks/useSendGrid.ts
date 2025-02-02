@@ -1,4 +1,3 @@
-```typescript
 import { useState } from 'react';
 import { SendGridService } from '../lib/integrations/email/SendGridService';
 
@@ -59,4 +58,3 @@ export function useSendGrid(apiKey: string) {
     sendBulkEmails
   };
 }
-```

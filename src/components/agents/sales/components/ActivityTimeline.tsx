@@ -1,4 +1,3 @@
-import React from 'react';
 import { MessageSquare, Mail, Phone, CheckCircle, Clock, AlertTriangle } from 'lucide-react';
 
 interface Activity {

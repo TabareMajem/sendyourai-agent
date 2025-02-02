@@ -1,4 +1,3 @@
-import React from 'react';
 import { Shield, Smartphone, Key, Globe } from 'lucide-react';
 
 interface SecuritySettingsProps {
@@ -6,7 +5,7 @@ interface SecuritySettingsProps {
   onUpdate: (section: string, data: any) => void;
 }
 
-export function SecuritySettings({ settings, onUpdate }: SecuritySettingsProps) {
+export function SecuritySettings({ settings, }: SecuritySettingsProps) {
   return (
     <div className="bg-white rounded-lg shadow">
       <div className="p-6">

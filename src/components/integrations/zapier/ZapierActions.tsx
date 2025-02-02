@@ -1,4 +1,3 @@
-import React from 'react';
 import { Zap, Settings, CheckCircle, AlertTriangle } from 'lucide-react';
 
 interface Action {

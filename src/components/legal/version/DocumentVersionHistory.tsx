@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { History, Clock, User, ArrowLeft, ArrowRight, GitBranch, Download } from 'lucide-react';
+import { useState } from 'react';
+import { History, Clock, User, GitBranch, Download } from 'lucide-react';
 
 interface DocumentVersion {
   id: string;
@@ -37,7 +37,7 @@ export function DocumentVersionHistory({
   onDownloadVersion
 }: DocumentVersionHistoryProps) {
   const [selectedVersions, setSelectedVersions] = useState<string[]>([]);
-  const [showComparison, setShowComparison] = useState(false);
+  const [, setShowComparison] = useState(false);
 
   const handleVersionSelect = (versionId: string) => {
     if (selectedVersions.includes(versionId)) {

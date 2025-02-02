@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DashboardLayout } from '../../../components/dashboard/DashboardLayout';
 import { IntegrationSettings } from '../../../components/agents/sales/components/IntegrationSettings';
 import { EmailTemplateManager } from '../../../components/agents/sales/components/EmailTemplateManager';

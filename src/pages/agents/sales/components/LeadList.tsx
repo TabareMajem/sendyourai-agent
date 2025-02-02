@@ -1,4 +1,3 @@
-import React from 'react';
 import { CheckCircle, XCircle, User, Building2, MapPin } from 'lucide-react';
 import { Lead } from '../../../../lib/agents/sales/types';
 

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Database, Plus, X, CheckCircle, AlertCircle } from 'lucide-react';
+import { Database, CheckCircle, AlertCircle } from 'lucide-react';
 
 interface DataSource {
   id: string;

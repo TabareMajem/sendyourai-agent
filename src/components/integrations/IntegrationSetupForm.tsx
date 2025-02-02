@@ -9,7 +9,7 @@ interface IntegrationSetupFormProps {
 }
 
 export function IntegrationSetupForm({ integration, onBack, onComplete }: IntegrationSetupFormProps) {
-  const [step, setStep] = useState(1);
+  // const [step, setStep] = useState(1);
   const [credentials, setCredentials] = useState<Record<string, string>>({});
   const [settings, setSettings] = useState<Record<string, any>>({});
   const [isLoading, setIsLoading] = useState(false);

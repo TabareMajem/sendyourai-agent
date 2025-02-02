@@ -1,4 +1,3 @@
-import React from 'react';
 import { DashboardLayout } from '../../components/dashboard/DashboardLayout';
 import { QuickActions } from '../../components/dashboard/QuickActions';
 import { ActiveWorkflows } from '../../components/dashboard/ActiveWorkflows';

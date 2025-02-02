@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DashboardLayout } from '../../components/dashboard/DashboardLayout';
 import { AgentCard } from '../../components/agents/AgentCard';
 import { AgentCreator } from '../../components/agents/AgentCreator';
@@ -40,18 +40,6 @@ export function AgentsDashboard() {
     type: '',
     status: ''
   });
-
-  const handleStartAgent = (id: string) => {
-    setAgents(agents.map(agent =>
-      agent.id === id ? { ...agent, status: 'active' as const } : agent
-    ));
-  };
-
-  const handlePauseAgent = (id: string) => {
-    setAgents(agents.map(agent =>
-      agent.id === id ? { ...agent, status: 'paused' as const } : agent
-    ));
-  };
 
   const handleConfigureAgent = (id: string) => {
     // Implement configuration modal/page navigation
@@ -137,10 +125,13 @@ export function AgentsDashboard() {
             <AgentCard
               key={agent.id}
               agent={agent}
-              onStart={handleStartAgent}
-              onPause={handlePauseAgent}
-              onConfigure={handleConfigureAgent}
-            />
+              // onStart={handleStartAgent}
+              // onPause={handlePauseAgent}
+              onConfigure={handleConfigureAgent} onStart={function (_id: string): void {
+                throw new Error('Function not implemented.');
+              } } onPause={function (_id: string): void {
+                throw new Error('Function not implemented.');
+              } }            />
           ))}
         </div>
 

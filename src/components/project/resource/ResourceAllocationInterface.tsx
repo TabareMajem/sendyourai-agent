@@ -1,4 +1,3 @@
-```typescript
 import React, { useState } from 'react';
 import { Users, Calendar, AlertTriangle, Plus, X } from 'lucide-react';
 
@@ -29,9 +28,7 @@ interface ResourceAllocationProps {
 export function ResourceAllocationInterface({
   resources,
   onAddResource,
-  onUpdateResource,
   onRemoveResource,
-  onAssignResource
 }: ResourceAllocationProps) {
   const [showAddForm, setShowAddForm] = useState(false);
   const [newResource, setNewResource] = useState<Omit<Resource, 'id'>>({
@@ -282,4 +279,3 @@ export function ResourceAllocationInterface({
     </div>
   );
 }
-```

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Activity, CheckCircle, XCircle, Clock } from 'lucide-react';
 
 interface Execution {

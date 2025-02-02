@@ -1,4 +1,3 @@
-import React from 'react';
 import { Calendar, Mail, MessageSquare, Database, BrainCircuit, GitBranch } from 'lucide-react';
 
 interface SettingsSidebarProps {

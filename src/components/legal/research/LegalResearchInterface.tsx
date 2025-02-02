@@ -1,6 +1,5 @@
-```typescript
-import React, { useState } from 'react';
-import { Search, Filter, Book, Download } from 'lucide-react';
+import { useState } from 'react';
+import { Search, Book, Download } from 'lucide-react';
 
 interface SearchResult {
   id: string;
@@ -164,4 +163,4 @@ export function LegalResearchInterface({
     </div>
   );
 }
-```
+

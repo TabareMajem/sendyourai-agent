@@ -1,4 +1,3 @@
-import React from 'react';
 import { CheckCircle, XCircle, Clock, AlertCircle } from 'lucide-react';
 import { Action } from '../../lib/ai/types';
 import { formatActionStatus, getActionDuration } from '../../lib/ai/utils/actionUtils';

@@ -1,4 +1,3 @@
-```typescript
 import React, { useState } from 'react';
 import { Clock, Filter, Download, Search, ArrowRight } from 'lucide-react';
 
@@ -145,4 +144,4 @@ export function ActivityLog({
     </div>
   );
 }
-```
+

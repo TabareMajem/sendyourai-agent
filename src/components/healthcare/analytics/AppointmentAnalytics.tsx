@@ -1,5 +1,3 @@
-```typescript
-import React from 'react';
 import { Calendar, Clock, AlertTriangle, CheckCircle } from 'lucide-react';
 
 interface AppointmentStats {
@@ -132,4 +130,3 @@ export function AppointmentAnalytics({ stats, className = '' }: AppointmentAnaly
     </div>
   );
 }
-```

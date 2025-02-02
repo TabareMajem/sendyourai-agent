@@ -1,4 +1,3 @@
-```typescript
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Mic, Phone, PaperclipIcon } from 'lucide-react';
 
@@ -148,4 +147,4 @@ export function ChatInterface({
     </div>
   );
 }
-```
+

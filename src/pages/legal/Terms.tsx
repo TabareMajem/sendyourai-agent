@@ -1,4 +1,3 @@
-import React from 'react';
 import { Scale, FileText, AlertTriangle, Shield, HelpCircle } from 'lucide-react';
 import { Footer } from '../../components/layout/Footer';
 

@@ -12,7 +12,7 @@ export class CreativeAgent {
     description: string;
     expectedImpact: string;
   }>> {
-    return this.aiAgent.queueAction('analysis', {
+    const result = await this.aiAgent.queueAction('analysis', {
       type: 'campaign_ideation',
       data: {
         goals: input.goals,
@@ -22,5 +22,12 @@ export class CreativeAgent {
         format: 'structured'
       }
     });
+
+    // If result is a single object, directly return the transformed result
+    return [{
+      title: result.type || '',  // Assuming result has a title property
+      description: result.type || '',  // Assuming result has a description property
+      expectedImpact: result.type || ''  // Assuming result has expectedImpact property
+    }];
   }
 }

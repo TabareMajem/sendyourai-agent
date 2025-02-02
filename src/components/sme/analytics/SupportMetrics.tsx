@@ -1,4 +1,3 @@
-import React from 'react';
 import { MessageSquare, Clock, CheckCircle, Users, TrendingUp } from 'lucide-react';
 
 interface SupportMetrics {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { TrendingUp, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 
 export function PerformanceMetrics() {

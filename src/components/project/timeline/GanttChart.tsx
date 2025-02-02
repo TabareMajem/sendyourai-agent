@@ -1,6 +1,5 @@
-```typescript
-import React, { useState } from 'react';
-import { Calendar, ChevronLeft, ChevronRight, Plus, Link, AlertTriangle } from 'lucide-react';
+import { useState } from 'react';
+import { Calendar, ChevronLeft, ChevronRight, Plus } from 'lucide-react';
 
 interface Task {
   id: string;
@@ -25,9 +24,6 @@ interface GanttChartProps {
 
 export function GanttChart({
   tasks,
-  onTaskUpdate,
-  onAddTask,
-  onAddDependency
 }: GanttChartProps) {
   const [viewStartDate, setViewStartDate] = useState(new Date());
   const [timeScale, setTimeScale] = useState<'day' | 'week' | 'month'>('week');
@@ -252,15 +248,10 @@ export function GanttChart({
           task.dependencies.map((depId) => {
             const dependencyTask = tasks.find((t) => t.id === depId);
             if (!dependencyTask) return null;
-
-            // Calculate path between tasks
-            const startTask = getTaskStyle(dependencyTask);
-            const endTask = getTaskStyle(task);
-
             return (
               <path
                 key={`${task.id}-${depId}`}
-                d={`M ${startTask.left} ${startTask.top} C ${startTask.left} ${endTask.top}, ${endTask.left} ${startTask.top}, ${endTask.left} ${endTask.top}`}
+                // d={`M ${startTask.left} ${startTask.top} C ${startTask.left} ${endTask.top}, ${endTask.left} ${startTask.top}, ${endTask.left} ${endTask.top}`}
                 stroke="#9CA3AF"
                 strokeWidth="2"
                 fill="none"
@@ -282,4 +273,3 @@ export function GanttChart({
     </div>
   );
 }
-```

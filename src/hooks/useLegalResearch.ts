@@ -1,4 +1,3 @@
-```typescript
 import { useState } from 'react';
 import { WestlawService } from '../lib/integrations/legal/WestlawService';
 import { LexisNexisService } from '../lib/integrations/legal/LexisNexisService';
@@ -124,4 +123,4 @@ function mergeResults(westlawResults: any[], lexisResults: any[]): any[] {
   // Remove duplicates based on citation or other unique identifier
   return Array.from(new Set(merged));
 }
-```
+

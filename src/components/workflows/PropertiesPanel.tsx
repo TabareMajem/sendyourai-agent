@@ -1,4 +1,3 @@
-import React from 'react';
 import { X } from 'lucide-react';
 import { TriggerProperties } from './properties/TriggerProperties';
 import { ActionProperties } from './properties/ActionProperties';

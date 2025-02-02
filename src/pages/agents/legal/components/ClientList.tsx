@@ -1,4 +1,3 @@
-import React from 'react';
 import { User, Clock, FileText, ArrowRight } from 'lucide-react';
 
 interface Client {

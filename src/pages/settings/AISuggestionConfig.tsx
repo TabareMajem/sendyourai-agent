@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DashboardLayout } from '../../components/dashboard/DashboardLayout';
 import { IndustryPreferences } from './components/IndustryPreferences';
 import { GoalAlignment } from './components/GoalAlignment';
-import { DataSourcesConfig } from './components/DataSourcesConfig';
 import { AutonomySettings } from './components/AutonomySettings';
-import { LearningPreferences } from './components/LearningPreferences';
 import { SafetySettings } from './components/SafetySettings';
 import { SimulationPreview } from './components/SimulationPreview';
 import { Bot, Save } from 'lucide-react';
@@ -72,7 +70,7 @@ export function AISuggestionConfig() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <IndustryPreferences
                 value={config.industries}
-                onChange={(industries) => setConfig({ ...config, industries })}
+                onChange={() => setConfig({ ...config })}
               />
               <GoalAlignment
                 value={config.goals}
@@ -80,20 +78,20 @@ export function AISuggestionConfig() {
               />
             </div>
 
-            <DataSourcesConfig
+            {/* <DataSourcesConfig
               value={config.dataSources}
               onChange={(dataSources) => setConfig({ ...config, dataSources })}
-            />
+            /> */}
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <AutonomySettings
                 value={config.autonomyLevel}
                 onChange={(autonomyLevel) => setConfig({ ...config, autonomyLevel })}
               />
-              <LearningPreferences
+              {/* <LearningPreferences
                 value={config.learningPreferences}
                 onChange={(learningPreferences) => setConfig({ ...config, learningPreferences })}
-              />
+              /> */}
             </div>
 
             <SafetySettings

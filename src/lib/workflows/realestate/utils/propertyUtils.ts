@@ -1,4 +1,3 @@
-```typescript
 import { z } from 'zod';
 
 export const PropertySchema = z.object({
@@ -62,4 +61,4 @@ export function calculateMarketMetrics(property: Property): {
     comparableListings: 0 // Would be calculated based on market data
   };
 }
-```
+

@@ -1,4 +1,3 @@
-import React from 'react';
 import { AlertTriangle, ArrowRight, Shield } from 'lucide-react';
 import { Project } from '../../../../../lib/agents/pmo/types';
 

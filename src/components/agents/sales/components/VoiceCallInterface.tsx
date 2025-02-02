@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Mic, MicOff, Volume2, X } from 'lucide-react';
+import { Phone, Mic, MicOff, Volume2 } from 'lucide-react';
 
 interface VoiceCallInterfaceProps {
   onStartCall: () => Promise<void>;

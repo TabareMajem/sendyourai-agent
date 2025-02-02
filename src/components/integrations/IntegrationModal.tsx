@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { X, Search, Check, AlertTriangle } from 'lucide-react';
-import { IntegrationCard } from './IntegrationCard';
+import { useState } from 'react';
+import { X, Search} from 'lucide-react';
+// import { IntegrationCard } from './IntegrationCard';
 import { IntegrationSetupForm } from './IntegrationSetupForm';
-import { useIntegrations } from '../../hooks/useIntegrations';
+// import { useIntegrations } from '../../hooks/useIntegrations';
 
 interface IntegrationModalProps {
   isOpen: boolean;
@@ -14,7 +14,7 @@ export function IntegrationModal({ isOpen, onClose, onIntegrationComplete }: Int
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedIntegration, setSelectedIntegration] = useState<any | null>(null);
-  const { integrations, isLoading } = useIntegrations();
+  // const { integrations, isLoading } = useIntegrations();
 
   const categories = [
     { id: 'email', name: 'Email', description: 'Send and manage emails' },
@@ -26,13 +26,13 @@ export function IntegrationModal({ isOpen, onClose, onIntegrationComplete }: Int
     { id: 'survey', name: 'Surveys', description: 'Forms and feedback' }
   ];
 
-  const filteredIntegrations = integrations.filter(integration => {
-    const matchesCategory = !selectedCategory || integration.category === selectedCategory;
-    const matchesSearch = !searchQuery || 
-      integration.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      integration.description.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  // const filteredIntegrations = integrations.filter(integration => {
+  //   const matchesCategory = !selectedCategory || integration.category === selectedCategory;
+  //   const matchesSearch = !searchQuery || 
+  //     integration.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  //     integration.description.toLowerCase().includes(searchQuery.toLowerCase());
+  //   return matchesCategory && matchesSearch;
+  // });
 
   if (!isOpen) return null;
 
@@ -95,7 +95,7 @@ export function IntegrationModal({ isOpen, onClose, onIntegrationComplete }: Int
 
               {/* Integration Grid */}
               <div className="px-6 py-4 max-h-[60vh] overflow-y-auto">
-                {isLoading ? (
+                {/* {isLoading ? (
                   <div className="flex items-center justify-center py-12">
                     <div className="animate-spin rounded-full h-8 w-8 border-2 border-indigo-600 border-t-transparent" />
                   </div>
@@ -117,7 +117,7 @@ export function IntegrationModal({ isOpen, onClose, onIntegrationComplete }: Int
                       Try adjusting your search or filter criteria
                     </p>
                   </div>
-                )}
+                )} */}
               </div>
             </>
           )}

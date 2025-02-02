@@ -1,4 +1,3 @@
-import React from 'react';
 import { Calendar, DollarSign, CheckCircle, XCircle, Download } from 'lucide-react';
 
 interface Payment {

@@ -11,15 +11,26 @@ export class CopywritingAgent {
     text: string;
     targetDate?: Date;
   }>> {
-    return this.aiAgent.queueAction('analysis', {
+    const result = await this.aiAgent.queueAction('analysis', {
       type: 'content_generation',
       data: {
         strategy: input.strategy,
         channels: input.channels,
         contentType: 'copy',
         tone: 'professional',
-        format: 'channel_specific'
-      }
+        format: 'channel_specific',
+      },
     });
+
+    // Map payload to expected structure
+    if (Array.isArray(result.payload)) {
+      return result.payload.map((item) => ({
+        channel: String(item.channel),
+        text: String(item.text),
+        targetDate: item.targetDate ? new Date(item.targetDate) : undefined,
+      }));
+    }
+
+    throw new Error('Invalid payload format');
   }
 }

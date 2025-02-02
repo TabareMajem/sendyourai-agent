@@ -1,11 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DashboardLayout } from '../../components/dashboard/DashboardLayout';
-import { OverviewMetrics } from '../../components/analytics/OverviewMetrics';
 import { TimeRangeSelector } from '../../components/analytics/TimeRangeSelector';
-import { PerformanceCharts } from '../../components/analytics/PerformanceCharts';
-import { WorkflowAnalytics } from '../../components/analytics/WorkflowAnalytics';
-import { AIPerformance } from '../../components/analytics/AIPerformance';
-import { UserEngagement } from '../../components/analytics/UserEngagement';
 import { useAnalytics } from '../../hooks/useAnalytics';
 
 export function AnalyticsDashboard() {
@@ -14,7 +9,7 @@ export function AnalyticsDashboard() {
     end: new Date()
   });
 
-  const { data, isLoading, error } = useAnalytics(timeRange);
+  const { isLoading, error } = useAnalytics(timeRange);
 
   if (isLoading) {
     return (
@@ -49,18 +44,18 @@ export function AnalyticsDashboard() {
         </div>
 
         {/* Overview Metrics */}
-        <OverviewMetrics data={data.overview} />
+        {/* <OverviewMetrics data={data.overview} /> */}
 
         {/* Charts */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <PerformanceCharts data={data.performance} />
-          <WorkflowAnalytics data={data.workflows} />
+          {/* <PerformanceCharts data={data.performance} /> */}
+          {/* <WorkflowAnalytics data={data.workflows} /> */}
         </div>
 
         {/* AI and User Engagement */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <AIPerformance data={data.ai} />
-          <UserEngagement data={data.engagement} />
+          {/* <AIPerformance data={data.ai} /> */}
+          {/* <UserEngagement data={data.engagement} /> */}
         </div>
       </div>
     </DashboardLayout>

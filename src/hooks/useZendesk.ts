@@ -1,4 +1,3 @@
-```typescript
 import { useState } from 'react';
 import { ZendeskService } from '../lib/integrations/crm/ZendeskService';
 
@@ -89,4 +88,4 @@ export function useZendesk(subdomain: string, token: string) {
     addComment
   };
 }
-```
+

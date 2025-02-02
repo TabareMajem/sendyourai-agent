@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, MessageSquare, Database, BrainCircuit } from 'lucide-react';
 
 interface ActionPropertiesProps {

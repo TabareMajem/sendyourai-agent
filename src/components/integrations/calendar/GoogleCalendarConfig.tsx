@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Calendar, Settings, AlertTriangle } from 'lucide-react';
 import { useGoogleCalendar } from '../../../hooks/useGoogleCalendar';
 

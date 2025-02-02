@@ -1,5 +1,3 @@
-```typescript
-import React from 'react';
 import { MessageSquare, User, Clock, AlertCircle, CheckCircle } from 'lucide-react';
 
 interface CustomerQuery {
@@ -129,4 +127,4 @@ export function CustomerQueryCard({
     </div>
   );
 }
-```
+

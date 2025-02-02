@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Shield, Info, Check } from 'lucide-react';
 
 interface DataProtectionNoticeProps {

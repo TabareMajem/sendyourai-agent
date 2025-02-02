@@ -1,4 +1,3 @@
-import React from 'react';
 import { FileText, CheckCircle, XCircle, AlertTriangle } from 'lucide-react';
 
 interface Decision {

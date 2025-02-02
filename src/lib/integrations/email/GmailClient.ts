@@ -1,6 +1,6 @@
 import { google } from 'googleapis';
 import { OAuth2Client } from 'google-auth-library';
-import { EmailProvider } from './types';
+import { EmailProvider } from '../types';
 
 export class GmailClient implements EmailProvider {
   private oauth2Client: OAuth2Client;
@@ -18,6 +18,9 @@ export class GmailClient implements EmailProvider {
     );
 
     this.gmail = google.gmail({ version: 'v1', auth: this.oauth2Client });
+  }
+  isConnected(): Promise<boolean> {
+    throw new Error('Method not implemented.');
   }
 
   async sendEmail(options: {

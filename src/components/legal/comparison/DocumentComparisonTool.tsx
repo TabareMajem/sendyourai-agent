@@ -1,6 +1,5 @@
-```typescript
-import React, { useState } from 'react';
-import { FileText, ArrowRight, Upload, Download, RefreshCw } from 'lucide-react';
+import { useState } from 'react';
+import { FileText, ArrowRight, Download, RefreshCw } from 'lucide-react';
 
 interface DocumentVersion {
   id: string;
@@ -206,4 +205,3 @@ export function DocumentComparisonTool({
     </div>
   );
 }
-```

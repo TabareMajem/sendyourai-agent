@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrainCircuit, MessageSquare } from 'lucide-react';
 
 interface LearningPreferencesProps {

@@ -1,5 +1,4 @@
-```typescript
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Plus, FileText, Folder, Search, Tag, MoreVertical } from 'lucide-react';
 
 interface DocumentTemplate {
@@ -155,4 +154,3 @@ export function TemplateManager({
     </div>
   );
 }
-```

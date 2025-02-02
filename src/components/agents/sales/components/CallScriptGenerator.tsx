@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Phone, Wand2, Save, Copy, AlertTriangle } from 'lucide-react';
+import { useState } from 'react';
+import { Phone, Wand2, Save, Copy } from 'lucide-react';
 
 interface CallScript {
   id: string;

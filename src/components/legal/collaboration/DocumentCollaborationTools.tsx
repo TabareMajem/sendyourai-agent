@@ -1,6 +1,5 @@
-```typescript
 import React, { useState } from 'react';
-import { Users, MessageSquare, Clock, Share2, Lock, Eye } from 'lucide-react';
+import { Users, MessageSquare, Share2 } from 'lucide-react';
 
 interface Collaborator {
   id: string;
@@ -33,7 +32,6 @@ interface DocumentCollaborationToolsProps {
 }
 
 export function DocumentCollaborationTools({
-  documentId,
   collaborators,
   comments,
   onAddCollaborator,
@@ -303,4 +301,3 @@ export function DocumentCollaborationTools({
     </div>
   );
 }
-```

@@ -1,6 +1,5 @@
-```typescript
 import React, { useState } from 'react';
-import { Link, FileText, Plus, Tag, AlertCircle } from 'lucide-react';
+import { Link, Plus, Tag} from 'lucide-react';
 
 interface Citation {
   id: string;
@@ -25,8 +24,6 @@ interface CitationManagerProps {
 export function CitationManager({
   citations,
   onAddCitation,
-  onUpdateCitation,
-  onDeleteCitation,
   onCheckShepardSignal
 }: CitationManagerProps) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -290,4 +287,4 @@ export function CitationManager({
     </div>
   );
 }
-```
+

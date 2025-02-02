@@ -1,4 +1,3 @@
-import React from 'react';
 import { X, Play, Pause, Clock, CheckCircle, AlertTriangle, Users, Tag } from 'lucide-react';
 
 interface WorkflowDetailsPanelProps {
@@ -6,7 +5,7 @@ interface WorkflowDetailsPanelProps {
   onClose: () => void;
 }
 
-export function WorkflowDetailsPanel({ workflowId, onClose }: WorkflowDetailsPanelProps) {
+export function WorkflowDetailsPanel({ onClose }: WorkflowDetailsPanelProps) {
   // In a real app, you would fetch workflow details using the workflowId
   const workflow = {
     name: 'Customer Onboarding',

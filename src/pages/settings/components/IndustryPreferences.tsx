@@ -1,5 +1,4 @@
-import React from 'react';
-import { Building2, Plus, X } from 'lucide-react';
+import { Building2, X } from 'lucide-react';
 
 interface IndustryPreferencesProps {
   value: {

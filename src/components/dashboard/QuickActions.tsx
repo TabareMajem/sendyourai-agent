@@ -1,4 +1,3 @@
-import React from 'react';
 import { Plus, FileText, Users, Settings, Building2, Gavel, ClipboardList } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

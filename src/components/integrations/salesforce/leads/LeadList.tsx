@@ -1,5 +1,3 @@
-```typescript
-import React from 'react';
 import { Edit, Trash2, ExternalLink, Clock } from 'lucide-react';
 
 interface LeadListProps {
@@ -103,4 +101,4 @@ export function LeadList({ leads, isLoading, onRefresh }: LeadListProps) {
     </div>
   );
 }
-```
+

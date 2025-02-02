@@ -1,5 +1,4 @@
-import React from 'react';
-import { Calendar, Clock, BookOpen, AlertCircle } from 'lucide-react';
+import { Calendar, BookOpen, AlertCircle } from 'lucide-react';
 
 interface Assignment {
   id: string;

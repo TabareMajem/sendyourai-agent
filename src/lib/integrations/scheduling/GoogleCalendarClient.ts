@@ -1,6 +1,6 @@
 import { google } from 'googleapis';
 import { OAuth2Client } from 'google-auth-library';
-import { SchedulingProvider } from './types';
+import { SchedulingProvider } from '../types';
 import { AppError, ErrorCodes } from '../../utils/errors';
 
 export class GoogleCalendarClient implements SchedulingProvider {

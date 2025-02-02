@@ -1,4 +1,3 @@
-import React from 'react';
 import { Clock, Filter, Download, Search } from 'lucide-react';
 import { ActivityTimeline } from './ActivityTimeline';
 

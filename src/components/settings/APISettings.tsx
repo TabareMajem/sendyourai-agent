@@ -6,7 +6,7 @@ interface APISettingsProps {
   onUpdate: (section: string, data: any) => void;
 }
 
-export function APISettings({ settings, onUpdate }: APISettingsProps) {
+export function APISettings({  }: APISettingsProps) {
   const [showKey, setShowKey] = useState(false);
   const [newKeyName, setNewKeyName] = useState('');
 

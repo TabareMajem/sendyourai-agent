@@ -1,9 +1,8 @@
-import React from 'react';
 import { useIntegrations } from '../../hooks/useIntegrations';
-import { IntegrationCard } from './IntegrationCard';
+// import { IntegrationCard } from './IntegrationCard';
 
 export function IntegrationList() {
-  const { integrations, isLoading } = useIntegrations();
+  const { /*integrations,*/ isLoading } = useIntegrations();
 
   if (isLoading) {
     return (
@@ -15,7 +14,7 @@ export function IntegrationList() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {integrations.map((integration) => (
+      {/* {integrations.map((integration) => (
         <IntegrationCard
           key={integration.id}
           integration={integration}
@@ -24,7 +23,7 @@ export function IntegrationList() {
             console.log('Connecting to', integration.name);
           }}
         />
-      ))}
+      ))} */}
     </div>
   );
 }

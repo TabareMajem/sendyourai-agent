@@ -1,5 +1,4 @@
-```typescript
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Search, RefreshCw, Database } from 'lucide-react';
 import { ClearbitClient } from '../../../lib/integrations/enrichment/ClearbitClient';
 
@@ -165,4 +164,4 @@ export function DataEnrichmentTools() {
     </div>
   );
 }
-```
+

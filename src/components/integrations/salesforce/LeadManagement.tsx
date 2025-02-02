@@ -1,6 +1,5 @@
-```typescript
-import React, { useState, useEffect } from 'react';
-import { Search, Plus, Filter, RefreshCw } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Search, Plus, RefreshCw } from 'lucide-react';
 import { useSalesforce } from '../../../hooks/useSalesforce';
 import { LeadList } from './leads/LeadList';
 import { LeadForm } from './leads/LeadForm';
@@ -116,4 +115,3 @@ export function LeadManagement() {
     </div>
   );
 }
-```

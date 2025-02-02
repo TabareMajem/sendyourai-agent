@@ -160,14 +160,14 @@ export class WorkoutPlanWorkflow {
     });
 
     // Update plan if needed
-    if (analysis.requiresPlanAdjustment) {
+    if (analysis.payload) {
       await this.adjustPlan(data.clientId, analysis);
     }
 
     return {
       analysis,
       report,
-      planAdjusted: analysis.requiresPlanAdjustment
+      planAdjusted: analysis.payload
     };
   }
 

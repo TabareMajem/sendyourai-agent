@@ -1,4 +1,3 @@
-import React from 'react';
 import { Building2, Dumbbell, ShoppingBag, Briefcase } from 'lucide-react';
 
 interface WorkflowTemplateSelectorProps {

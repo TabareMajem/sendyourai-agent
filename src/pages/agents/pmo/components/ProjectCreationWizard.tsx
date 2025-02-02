@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 interface ProjectCreationWizardProps {
@@ -334,7 +334,7 @@ export function ProjectCreationWizard({ onSubmit, onCancel }: ProjectCreationWiz
           {/* Progress Steps */}
           <div className="mb-8">
             <div className="flex items-center justify-between">
-              {['Project Details', 'Timeline & Budget', 'Stakeholders', 'Deliverables'].map((label, index) => (
+              {['Project Details', 'Timeline & Budget', 'Stakeholders', 'Deliverables'].map((_label, index) => (
                 <div key={index} className="flex items-center">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
                     step > index + 1 ? 'bg-green-500' :

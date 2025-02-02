@@ -18,7 +18,7 @@ export function AIWorkflowGenerator({ onWorkflowGenerated }: AIWorkflowGenerator
     setError(null);
 
     try {
-      const workflow = await generateWorkflow(prompt);
+      const workflow = await generateWorkflow();
       onWorkflowGenerated(workflow);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to generate workflow');
@@ -74,8 +74,8 @@ export function AIWorkflowGenerator({ onWorkflowGenerated }: AIWorkflowGenerator
 }
 
 // Mock function to simulate workflow generation
-async function generateWorkflow(prompt: string) {
-  await new Promise(resolve => setTimeout(resolve, 1500));
+async function generateWorkflow() {
+  await new Promise(resolve => setTimeout(resolve, 1500), );
 
   return {
     nodes: [

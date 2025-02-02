@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Mail, Plus, Edit, Trash2, Copy } from 'lucide-react';
 
 interface EmailTemplate {

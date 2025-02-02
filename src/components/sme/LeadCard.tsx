@@ -1,5 +1,3 @@
-```typescript
-import React from 'react';
 import { User, Building2, Mail, Phone, Tag, Clock, ArrowRight } from 'lucide-react';
 
 interface Lead {
@@ -144,4 +142,3 @@ export function LeadCard({
     </div>
   );
 }
-```

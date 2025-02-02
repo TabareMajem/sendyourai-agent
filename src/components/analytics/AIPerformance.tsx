@@ -1,4 +1,3 @@
-import React from 'react';
 import { Brain, ThumbsUp, ThumbsDown, TrendingUp } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 

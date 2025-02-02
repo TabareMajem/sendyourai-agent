@@ -1,4 +1,3 @@
-import React from 'react';
 import { BarChart2, TrendingUp, AlertTriangle } from 'lucide-react';
 import { Project } from '../../../../../lib/agents/pmo/types';
 

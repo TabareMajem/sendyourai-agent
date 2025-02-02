@@ -1,4 +1,3 @@
-import React from 'react';
 import { DollarSign, TrendingUp, Clock, AlertCircle } from 'lucide-react';
 import { Deal } from '../../../../lib/agents/sales/types';
 

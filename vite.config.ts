@@ -29,11 +29,6 @@ export default defineConfig({
             purpose: 'any maskable'
           }
         ]
-      },
-      workbox: {
-        cleanupOutdatedCaches: true,
-        skipWaiting: true,
-        clientsClaim: true
       }
     })
   ],
@@ -45,17 +40,5 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true
-  },
-  build: {
-    sourcemap: true,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: ['lucide-react', 'recharts', 'reactflow'],
-          i18n: ['i18next', 'react-i18next']
-        }
-      }
-    }
   }
 });

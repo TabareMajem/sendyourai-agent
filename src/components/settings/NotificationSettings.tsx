@@ -1,4 +1,3 @@
-import React from 'react';
 import { Bell, Mail, MessageSquare, Globe } from 'lucide-react';
 
 interface NotificationSettingsProps {

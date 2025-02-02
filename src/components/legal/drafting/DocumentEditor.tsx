@@ -1,5 +1,4 @@
-```typescript
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Save, Eye, Code, FileText, Download, RefreshCw } from 'lucide-react';
 
 interface DocumentTemplate {
@@ -130,4 +129,3 @@ export function DocumentEditor({
     </div>
   );
 }
-```

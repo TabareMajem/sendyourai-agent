@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { CreditCard, Key, AlertTriangle, Eye, EyeOff } from 'lucide-react';
 
 interface StripeSettingsProps {

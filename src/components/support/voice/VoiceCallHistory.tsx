@@ -1,5 +1,3 @@
-```typescript
-import React from 'react';
 import { Phone, PhoneIncoming, PhoneOutgoing, PhoneMissed, Clock } from 'lucide-react';
 
 interface CallRecord {
@@ -107,4 +105,4 @@ export function VoiceCallHistory({
     </div>
   );
 }
-```
+

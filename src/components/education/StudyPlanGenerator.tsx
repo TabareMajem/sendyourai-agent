@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Brain, Clock, Target, Book, Plus, X } from 'lucide-react';
+import { useState } from 'react';
+import { Brain, Clock, Target, Plus, X } from 'lucide-react';
 
 interface StudyPlanGeneratorProps {
   studentId: string;
@@ -17,8 +17,6 @@ interface StudyPlanConfig {
 }
 
 export function StudyPlanGenerator({
-  studentId,
-  assignmentId,
   onGenerate,
   onClose
 }: StudyPlanGeneratorProps) {

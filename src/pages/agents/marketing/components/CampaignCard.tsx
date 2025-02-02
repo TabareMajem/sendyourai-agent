@@ -1,4 +1,3 @@
-import React from 'react';
 import { Play, Pause, Settings, BarChart2, Calendar } from 'lucide-react';
 import { Campaign } from '../../../../lib/agents/marketing/types';
 
@@ -34,7 +33,7 @@ export function CampaignCard({
     <div className="bg-white rounded-lg border border-gray-200 hover:border-indigo-600 transition-colors shadow-sm p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="text-lg font-medium text-gray-900">{campaign.name}</h3>
+          {/* <h3 className="text-lg font-medium text-gray-900">{campaign.name}</h3> */}
           <p className="text-sm text-gray-500">
             {campaign.channels.join(', ')}
           </p>

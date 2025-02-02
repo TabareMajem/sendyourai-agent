@@ -1,4 +1,3 @@
-```typescript
 import React, { useState, useEffect } from 'react';
 import { Phone, Mic, MicOff, PhoneOff, Volume2 } from 'lucide-react';
 import { TwilioVoiceService } from '../../../lib/integrations/voice/TwilioVoiceService';
@@ -140,4 +139,4 @@ export function VoiceCallControls({ token, onCallStatusChange }: VoiceCallContro
     </div>
   );
 }
-```
+

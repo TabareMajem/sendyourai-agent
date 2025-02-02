@@ -12,7 +12,7 @@ export function useWorkflowEngine() {
     setError(null);
 
     try {
-      if (!engine.validateWorkflow(workflow)) {
+      if (!engine.validateWorkflow()) {
         throw new Error('Invalid workflow configuration');
       }
 

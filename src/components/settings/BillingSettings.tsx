@@ -1,4 +1,3 @@
-import React from 'react';
 import { CreditCard, Package, Calendar, Download } from 'lucide-react';
 
 interface BillingSettingsProps {
@@ -6,7 +5,7 @@ interface BillingSettingsProps {
   onUpdate: (section: string, data: any) => void;
 }
 
-export function BillingSettings({ settings, onUpdate }: BillingSettingsProps) {
+export function BillingSettings({ settings }: BillingSettingsProps) {
   return (
     <div className="bg-white rounded-lg shadow">
       <div className="p-6">

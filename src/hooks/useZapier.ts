@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { ZapierClient } from '../lib/zapier/ZapierClient';
 
 export function useZapier() {
   const [isConnected, setIsConnected] = useState(false);

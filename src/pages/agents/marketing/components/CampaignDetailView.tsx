@@ -1,5 +1,4 @@
-import React from 'react';
-import { X, Calendar, Target, Users, BarChart2, Clock, ArrowRight } from 'lucide-react';
+import { X, Calendar, Target, Users, Clock, ArrowRight } from 'lucide-react';
 import { Campaign } from '../../../../lib/agents/marketing/types';
 import { CampaignPerformanceMetrics } from './CampaignPerformanceMetrics';
 import { CampaignContentTimeline } from './CampaignContentTimeline';
@@ -14,7 +13,7 @@ interface CampaignDetailViewProps {
 export function CampaignDetailView({
   campaign,
   onClose,
-  onUpdateCampaign
+  // onUpdateCampaign
 }: CampaignDetailViewProps) {
   return (
     <div className="fixed inset-0 overflow-hidden z-50">
@@ -26,7 +25,7 @@ export function CampaignDetailView({
               {/* Header */}
               <div className="px-6 py-4 border-b border-gray-200">
                 <div className="flex items-center justify-between">
-                  <h2 className="text-lg font-medium text-gray-900">{campaign.name}</h2>
+                  {/* <h2 className="text-lg font-medium text-gray-900">{campaign.name}</h2> */}
                   <button
                     onClick={onClose}
                     className="rounded-md text-gray-400 hover:text-gray-500"

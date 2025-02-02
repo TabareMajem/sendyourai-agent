@@ -1,12 +1,10 @@
-import React from 'react';
 import { DashboardLayout } from '../../components/dashboard/DashboardLayout';
 import { AIConfigPanel } from '../../components/ai/config/AIConfigPanel';
 import { AIPerformanceMetrics } from '../../components/ai/analytics/AIPerformanceMetrics';
-import { AIInsightsList } from '../../components/ai/analytics/AIInsightsList';
 import { AILearningProgress } from '../../components/ai/analytics/AILearningProgress';
-import { AIDecisionHistory } from '../../components/ai/analytics/AIDecisionHistory';
 
-export default function AISettings() {
+export function AISettings() {
+  // Mock data for demonstration
   const performanceMetrics = {
     successRate: 95,
     averageResponseTime: 250,
@@ -15,24 +13,24 @@ export default function AISettings() {
     errorRate: 2
   };
 
-  const insights = [
-    {
-      id: '1',
-      type: 'optimization',
-      title: 'Workflow Optimization Available',
-      description: 'AI has detected potential improvements in your customer onboarding workflow',
-      impact: 'high',
-      timestamp: new Date()
-    },
-    {
-      id: '2',
-      type: 'warning',
-      title: 'Unusual Pattern Detected',
-      description: 'Detected anomaly in system response times during peak hours',
-      impact: 'medium',
-      timestamp: new Date()
-    }
-  ];
+  // const insights = [
+  //   {
+  //     id: '1',
+  //     type: 'optimization',
+  //     title: 'Workflow Optimization Available',
+  //     description: 'AI has detected potential improvements in your customer onboarding workflow',
+  //     impact: 'high',
+  //     timestamp: new Date()
+  //   },
+  //   {
+  //     id: '2',
+  //     type: 'warning',
+  //     title: 'Unusual Pattern Detected',
+  //     description: 'Detected anomaly in system response times during peak hours',
+  //     impact: 'medium',
+  //     timestamp: new Date()
+  //   }
+  // ];
 
   const learningMetrics = {
     accuracy: 92,
@@ -45,28 +43,28 @@ export default function AISettings() {
     confidenceChange: 2
   };
 
-  const decisions = [
-    {
-      id: '1',
-      timestamp: new Date(),
-      type: 'Workflow Optimization',
-      context: 'Customer onboarding process',
-      outcome: 'success',
-      confidence: 95,
-      impact: 'high',
-      details: 'Successfully optimized workflow reducing process time by 25%'
-    },
-    {
-      id: '2',
-      timestamp: new Date(),
-      type: 'Resource Allocation',
-      context: 'Server scaling decision',
-      outcome: 'pending',
-      confidence: 85,
-      impact: 'medium',
-      details: 'Evaluating resource requirements based on current load'
-    }
-  ];
+  // const decisions = [
+  //   {
+  //     id: '1',
+  //     timestamp: new Date(),
+  //     type: 'Workflow Optimization',
+  //     context: 'Customer onboarding process',
+  //     outcome: 'success',
+  //     confidence: 95,
+  //     impact: 'high',
+  //     details: 'Successfully optimized workflow reducing process time by 25%'
+  //   },
+  //   {
+  //     id: '2',
+  //     timestamp: new Date(),
+  //     type: 'Resource Allocation',
+  //     context: 'Server scaling decision',
+  //     outcome: 'pending',
+  //     confidence: 85,
+  //     impact: 'medium',
+  //     details: 'Evaluating resource requirements based on current load'
+  //   }
+  // ];
 
   return (
     <DashboardLayout>
@@ -78,19 +76,19 @@ export default function AISettings() {
           {/* Performance Metrics */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <AIPerformanceMetrics metrics={performanceMetrics} />
-            <AIInsightsList
+            {/* <AIInsightsList
               insights={insights}
               onInsightAction={(id, action) => {
                 console.log('Insight action:', id, action);
               }}
-            />
+            /> */}
           </div>
 
           {/* Learning Progress */}
           <AILearningProgress metrics={learningMetrics} />
 
           {/* Decision History */}
-          <AIDecisionHistory decisions={decisions} />
+          {/* <AIDecisionHistory decisions={decisions} /> */}
         </div>
       </div>
     </DashboardLayout>

@@ -1,5 +1,4 @@
-```typescript
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { ZapierClient } from '../lib/zapier/ZapierClient';
 import { AIAgent } from '../lib/ai/AIAgent';
 import { PatientFollowUpWorkflow } from '../lib/workflows/healthcare/PatientFollowUpWorkflow';
@@ -41,4 +40,3 @@ export function useHealthcareWorkflows() {
     processUpcomingAppointment
   };
 }
-```

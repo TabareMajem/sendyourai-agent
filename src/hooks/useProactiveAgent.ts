@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ProactiveAgent } from '../lib/ai/ProactiveAgent';
-import { AIContext } from '../lib/ai/types';
 
 export function useProactiveAgent(initialConfidence = 0.8) {
   const [agent] = useState(() => new ProactiveAgent(initialConfidence));
@@ -13,9 +12,9 @@ export function useProactiveAgent(initialConfidence = 0.8) {
     };
   }, [agent]);
 
-  const analyzeSituation = useCallback(async (context: AIContext) => {
-    await agent.analyzeSituation(context);
-  }, [agent]);
+  // const analyzeSituation = useCallback(async (context: AIContext) => {
+  //   await agent.analyzeSituation(context);
+  // }, [agent]);
 
   const toggleLearning = useCallback((enabled: boolean) => {
     if (enabled) {
@@ -34,7 +33,6 @@ export function useProactiveAgent(initialConfidence = 0.8) {
   return {
     isLearning,
     confidenceThreshold,
-    analyzeSituation,
     toggleLearning,
     updateConfidenceThreshold
   };

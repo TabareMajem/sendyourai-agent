@@ -7,6 +7,12 @@ export class TypeformClient implements SurveyProvider {
   constructor(apiKey: string) {
     this.apiKey = apiKey;
   }
+  createSurvey(_data: { title: string; fields?: Array<{ type: string; title: string; required?: boolean; properties?: Record<string, any>; }>; pages?: Array<{ questions: Array<{ type: string; text: string; required?: boolean; choices?: string[]; }>; }>; }): Promise<string> {
+    throw new Error('Method not implemented.');
+  }
+  getSurvey(_surveyId: string): Promise<any> {
+    throw new Error('Method not implemented.');
+  }
 
   private async request(endpoint: string, options: RequestInit = {}): Promise<any> {
     const response = await fetch(`${this.baseUrl}${endpoint}`, {

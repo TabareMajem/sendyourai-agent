@@ -1,4 +1,3 @@
-```typescript
 import { AppError, ErrorCodes } from '../../../utils/errors';
 
 export class MatterportService {
@@ -71,4 +70,4 @@ export class MatterportService {
     });
   }
 }
-```
+

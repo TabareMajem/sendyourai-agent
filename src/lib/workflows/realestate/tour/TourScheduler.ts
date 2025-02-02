@@ -1,4 +1,3 @@
-```typescript
 import { AIAgent } from '../../../ai/AIAgent';
 import { Property } from '../utils/propertyUtils';
 
@@ -16,7 +15,6 @@ export class TourScheduler {
     preferredDates: Date[];
     notes?: string;
   }, property: Property) {
-    // Analyze best time slots based on agent and buyer preferences
     const timeSlots = await this.aiAgent.queueAction('analysis', {
       type: 'analyze_scheduling',
       data: {
@@ -25,27 +23,30 @@ export class TourScheduler {
         tourType: request.type
       }
     });
-
-    // Schedule the tour
+  
+    if (!Array.isArray(timeSlots) || timeSlots.length === 0) {
+      throw new Error('No available time slots found.');
+    }
+  
     const scheduledTour = await this.aiAgent.queueAction('task', {
       type: 'schedule_tour',
       data: {
         propertyId: request.propertyId,
         userId: request.userId,
         tourType: request.type,
-        timeSlot: timeSlots[0], // Use first available slot
+        timeSlot: timeSlots[0],
         notes: request.notes
       }
     });
-
-    // Send confirmations
+  
     await Promise.all([
       this.sendBuyerConfirmation(request.userId, scheduledTour),
       this.sendAgentConfirmation(property.agent.id, scheduledTour)
     ]);
-
+  
     return scheduledTour;
   }
+  
 
   private async sendBuyerConfirmation(userId: string, tour: any) {
     await this.aiAgent.queueAction('email', {
@@ -69,4 +70,4 @@ export class TourScheduler {
     });
   }
 }
-```
+

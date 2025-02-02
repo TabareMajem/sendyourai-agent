@@ -1,10 +1,8 @@
-```typescript
-import React from 'react';
 import { useSubscription } from '../../hooks/useSubscription';
 import { ArrowRight, AlertTriangle } from 'lucide-react';
 
 export function SubscriptionBanner() {
-  const { subscription, plans } = useSubscription();
+  const { subscription } = useSubscription();
 
   if (!subscription || subscription.status === 'active') {
     return null;
@@ -55,4 +53,3 @@ export function SubscriptionBanner() {
     </div>
   );
 }
-```

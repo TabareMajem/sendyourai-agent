@@ -1,27 +1,20 @@
-import { IntegrationManager } from './IntegrationManager';
 import { 
   EmailProvider, 
   MessagingProvider, 
   CRMProvider, 
   ProjectManagementProvider, 
-  EcommerceProvider, 
-  SchedulingProvider, 
-  SurveyProvider,
-  StorageProvider
 } from './types';
 
 import { GmailClient } from './email/GmailClient';
-import { SendGridClient } from './email/SendGridClient';
 import { SlackClient } from './messaging/SlackClient';
 import { TwilioClient } from './messaging/TwilioClient';
 import { SalesforceClient } from './crm/SalesforceClient';
-import { HubSpotClient } from './crm/HubSpotClient';
 import { TrelloClient } from './project/TrelloClient';
 import { AsanaClient } from './project/AsanaClient';
 import { GoogleDriveClient } from './drive/GoogleDriveClient';
+import { StorageProvider } from './drive/types';
 
 export class IntegrationFactory {
-  private static manager = IntegrationManager.getInstance();
 
   public static async createProvider(type: string, category: string, config: any): Promise<any> {
     switch (category) {
@@ -44,8 +37,6 @@ export class IntegrationFactory {
     switch (type) {
       case 'gmail':
         return new GmailClient(config);
-      case 'sendgrid':
-        return new SendGridClient(config.apiKey);
       default:
         throw new Error(`Unsupported email provider: ${type}`);
     }
@@ -66,8 +57,6 @@ export class IntegrationFactory {
     switch (type) {
       case 'salesforce':
         return new SalesforceClient(config);
-      case 'hubspot':
-        return new HubSpotClient(config.apiKey);
       default:
         throw new Error(`Unsupported CRM provider: ${type}`);
     }

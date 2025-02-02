@@ -1,31 +1,95 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DashboardLayout } from '../../../components/dashboard/DashboardLayout';
 import { ClientList } from './components/ClientList';
 import { DocumentManager } from './components/DocumentManager';
 import { ActivityAnalytics } from './components/ActivityAnalytics';
 import { ClientCreationModal } from './components/ClientCreationModal';
-import { LegalWorkflowManager } from '../../../lib/workflows/legal/LegalWorkflowManager';
-import { Plus, Filter, Search } from 'lucide-react';
+import { Plus } from 'lucide-react';
+
+// Mock data
+const mockClients = [
+  {
+    id: '1',
+    name: 'John Doe',
+    email: 'john@example.com',
+    caseType: 'Contract Review',
+    status: 'active' as const,
+    lastActivity: '2 hours ago',
+    documentsCount: 5
+  },
+  {
+    id: '2',
+    name: 'Jane Smith',
+    email: 'jane@example.com',
+    caseType: 'Corporate Law',
+    status: 'pending' as const,
+    lastActivity: '1 day ago',
+    documentsCount: 3
+  }
+];
+
+const mockDocuments = [
+  {
+    id: '1',
+    title: 'Service Agreement',
+    type: 'Contract',
+    status: 'draft' as const,
+    lastModified: '2024-02-20 10:30 AM',
+    tags: ['contract', 'review-needed']
+  },
+  {
+    id: '2',
+    title: 'NDA Template',
+    type: 'Template',
+    status: 'final' as const,
+    lastModified: '2024-02-19 03:45 PM',
+    tags: ['template', 'approved']
+  }
+];
+
+const mockAnalytics = {
+  documentStats: {
+    total: 45,
+    drafts: 12,
+    inReview: 8,
+    completed: 25
+  },
+  recentActivity: [
+    {
+      id: '1',
+      type: 'document_created',
+      description: 'New contract draft created',
+      timestamp: '2 hours ago'
+    },
+    {
+      id: '2',
+      type: 'document_reviewed',
+      description: 'NDA template approved',
+      timestamp: '4 hours ago'
+    }
+  ],
+  timeline: [
+    { date: '2024-02-14', documents: 5, reviews: 3 },
+    { date: '2024-02-15', documents: 7, reviews: 4 },
+    { date: '2024-02-16', documents: 3, reviews: 2 },
+    { date: '2024-02-17', documents: 6, reviews: 5 }
+  ]
+};
 
 export function LegalAgentDashboard() {
-  const [clients, setClients] = useState<any[]>([]);
   const [selectedClient, setSelectedClient] = useState<string | null>(null);
   const [showNewClient, setShowNewClient] = useState(false);
-  const [filters, setFilters] = useState({
-    status: '',
-    search: ''
-  });
 
-  const legalManager = new LegalWorkflowManager({
-    zapierAuth: {
-      apiKey: import.meta.env.VITE_ZAPIER_API_KEY || '',
-      accountId: import.meta.env.VITE_ZAPIER_ACCOUNT_ID || ''
-    }
-  });
+  // const legalManager = new LegalWorkflowManager({
+  //   zapierAuth: {
+  //     apiKey: process.env.VITE_ZAPIER_API_KEY || '',
+  //     accountId: process.env.VITE_ZAPIER_ACCOUNT_ID || ''
+  //   }
+  // });
 
-  const handleNewClient = async (clientData: any) => {
+  const handleNewClient = async () => {
     try {
-      await legalManager.handleNewClient(clientData);
+      // await legalManager.handleNewClient(clientData);
       setShowNewClient(false);
       // Refresh client list
     } catch (error) {
@@ -58,7 +122,7 @@ export function LegalAgentDashboard() {
           {/* Left Column - Client List */}
           <div className="col-span-3">
             <ClientList
-              clients={clients}
+              clients={mockClients}
               selectedClientId={selectedClient}
               onSelectClient={setSelectedClient}
             />
@@ -67,7 +131,7 @@ export function LegalAgentDashboard() {
           {/* Middle Column - Document Management */}
           <div className="col-span-6">
             <DocumentManager
-              documents={[]}
+              documents={mockDocuments}
               onViewDocument={(id) => console.log('View document:', id)}
               onDownloadDocument={(id) => console.log('Download document:', id)}
             />
@@ -75,36 +139,7 @@ export function LegalAgentDashboard() {
 
           {/* Right Column - Activity & Analytics */}
           <div className="col-span-3">
-            <ActivityAnalytics
-              data={{
-                documentStats: {
-                  total: 45,
-                  drafts: 12,
-                  inReview: 8,
-                  completed: 25
-                },
-                recentActivity: [
-                  {
-                    id: '1',
-                    type: 'document_created',
-                    description: 'New contract draft created',
-                    timestamp: '2 hours ago'
-                  },
-                  {
-                    id: '2',
-                    type: 'document_reviewed',
-                    description: 'NDA template approved',
-                    timestamp: '4 hours ago'
-                  }
-                ],
-                timeline: [
-                  { date: '2024-02-14', documents: 5, reviews: 3 },
-                  { date: '2024-02-15', documents: 7, reviews: 4 },
-                  { date: '2024-02-16', documents: 3, reviews: 2 },
-                  { date: '2024-02-17', documents: 6, reviews: 5 }
-                ]
-              }}
-            />
+            <ActivityAnalytics data={mockAnalytics} />
           </div>
         </div>
 

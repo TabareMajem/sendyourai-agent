@@ -1,4 +1,16 @@
+import { z } from 'zod';
 import { AIAgent } from '../../../ai/AIAgent';
+
+// Define the expected schema for the resource allocation
+const ResourceAllocationSchema = z.array(
+  z.object({
+    type: z.string(),
+    name: z.string(),
+    allocation: z.number(),
+    startDate: z.instanceof(Date),
+    endDate: z.instanceof(Date),
+  })
+);
 
 export class ResourceAgent {
   constructor(private aiAgent: AIAgent) {}
@@ -14,7 +26,7 @@ export class ResourceAgent {
     startDate: Date;
     endDate: Date;
   }>> {
-    return this.aiAgent.queueAction('analysis', {
+    const result = await this.aiAgent.queueAction('analysis', {
       type: 'resource_allocation',
       data: {
         projectScope: input.scope,
@@ -23,6 +35,11 @@ export class ResourceAgent {
         optimizeFor: 'efficiency'
       }
     });
+
+    // Validate the payload using the ResourceAllocationSchema
+    const validatedPayload = ResourceAllocationSchema.parse(result.payload);
+
+    return validatedPayload;
   }
 
   public async updateResources(projectId: string, updates: any): Promise<void> {

@@ -1,4 +1,3 @@
-```typescript
 import { AIAgent } from '../../../ai/AIAgent';
 import { Property } from '../utils/propertyUtils';
 
@@ -51,4 +50,4 @@ export class ListingContentGenerator {
     });
   }
 }
-```
+

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Settings, Check, AlertTriangle } from 'lucide-react';
+import { useState } from 'react';
+import { Settings, Check } from 'lucide-react';
 import { SocialMediaConfig } from './integrations/SocialMediaConfig';
 import { EmailMarketingConfig } from './integrations/EmailMarketingConfig';
 import { AnalyticsConfig } from './integrations/AnalyticsConfig';

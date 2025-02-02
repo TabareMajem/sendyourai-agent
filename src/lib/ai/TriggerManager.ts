@@ -17,6 +17,7 @@ export type TriggerCondition = z.infer<typeof TriggerConditionSchema>;
 export type TriggerSchedule = z.infer<typeof TriggerScheduleSchema>;
 
 export class TriggerManager {
+  [x: string]: any;
   private agent: AIAgent;
   private scheduleIntervals: Map<string, NodeJS.Timeout>;
 

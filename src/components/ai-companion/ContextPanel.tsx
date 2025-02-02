@@ -1,5 +1,4 @@
-import React from 'react';
-import { X, FileText, Calendar, Users } from 'lucide-react';
+import { X, FileText, Calendar } from 'lucide-react';
 
 interface ContextPanelProps {
   onClose: () => void;

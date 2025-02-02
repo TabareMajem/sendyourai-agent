@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { DollarSign, AlertTriangle, CheckCircle, Search } from 'lucide-react';
 
 interface Refund {
@@ -15,23 +15,9 @@ interface RefundManagementProps {
   onProcessRefund: (paymentId: string, amount: number, reason: string) => Promise<void>;
 }
 
-export function RefundManagement({ refunds, onProcessRefund }: RefundManagementProps) {
-  const [selectedRefund, setSelectedRefund] = useState<Refund | null>(null);
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  const handleProcessRefund = async (paymentId: string, amount: number, reason: string) => {
-    try {
-      setError(null);
-      setIsProcessing(true);
-      await onProcessRefund(paymentId, amount, reason);
-      setSelectedRefund(null);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to process refund');
-    } finally {
-      setIsProcessing(false);
-    }
-  };
+export function RefundManagement({ refunds,  }: RefundManagementProps) {
+  const [, setSelectedRefund] = useState<Refund | null>(null);
+  const [error, ] = useState<string | null>(null);
 
   return (
     <div className="bg-white rounded-lg shadow">

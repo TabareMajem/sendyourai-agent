@@ -1,4 +1,3 @@
-```typescript
 import { MatterportService } from '../services/MatterportService';
 import { Property } from '../utils/propertyUtils';
 
@@ -60,4 +59,4 @@ export class VirtualTourGenerator {
     `.trim();
   }
 }
-```
+

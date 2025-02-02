@@ -1,4 +1,3 @@
-import React from 'react';
 import { Image, FileText, Palette } from 'lucide-react';
 
 interface ContentToolsConfigProps {

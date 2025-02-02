@@ -1,4 +1,3 @@
-```typescript
 import { ZillowService } from '../services/ZillowService';
 import { MLSService } from '../services/MLSService';
 import { Property } from '../utils/propertyUtils';
@@ -41,10 +40,10 @@ export class ListingAnalytics {
       },
       engagement: {
         savedCount: zillowStats.saves,
-        shareCount: zillowStats.shares || 0,
-        viewDuration: zillowStats.averageViewTime || 0
+        shareCount: zillowStats.viewerDemographics || 0,
+        viewDuration: zillowStats.views || 0
       }
     };
   }
 }
-```
+

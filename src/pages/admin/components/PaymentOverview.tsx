@@ -1,4 +1,3 @@
-import React from 'react';
 import { CreditCard, DollarSign, TrendingUp } from 'lucide-react';
 
 interface Transaction {

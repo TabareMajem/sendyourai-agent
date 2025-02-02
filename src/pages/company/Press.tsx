@@ -1,5 +1,4 @@
-import React from 'react';
-import { Newspaper, Award, Calendar } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import { Footer } from '../../components/layout/Footer';
 
 const pressReleases = [

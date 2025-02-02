@@ -1,6 +1,5 @@
-```typescript
 import { z } from 'zod';
-import { TokenGenerator, Token } from './TokenGenerator';
+import { TokenGenerator } from './TokenGenerator';
 
 const SessionSchema = z.object({
   userId: z.string(),
@@ -84,4 +83,3 @@ export class SessionManager {
     }
   }
 }
-```

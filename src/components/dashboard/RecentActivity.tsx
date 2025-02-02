@@ -1,5 +1,4 @@
-import React from 'react';
-import { Activity, User, Bot, Workflow } from 'lucide-react';
+import { User, Bot, Workflow } from 'lucide-react';
 
 export function RecentActivity() {
   const activities = [

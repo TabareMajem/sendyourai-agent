@@ -1,4 +1,3 @@
-import React from 'react';
 import { Building2, Camera, Calendar, MessageSquare } from 'lucide-react';
 import { UseCaseLayout } from '../../components/use-cases/UseCaseLayout';
 import { ChallengesSolutions } from '../../components/use-cases/ChallengesSolutions';

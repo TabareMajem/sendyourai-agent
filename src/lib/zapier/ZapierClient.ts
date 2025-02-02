@@ -16,33 +16,10 @@ export interface ZapierWebhook {
 export class ZapierClient {
   private auth: ZapierAuth;
   private webhooks: Map<string, ZapierWebhook>;
-  private baseUrl: string;
 
   constructor(auth: ZapierAuth) {
     this.auth = auth;
     this.webhooks = new Map();
-    this.baseUrl = 'https://api.zapier.com/v2';
-  }
-
-  private async request(endpoint: string, options: RequestInit = {}): Promise<any> {
-    const response = await fetch(`${this.baseUrl}${endpoint}`, {
-      ...options,
-      headers: {
-        'Authorization': `Bearer ${this.auth.apiKey}`,
-        'Content-Type': 'application/json',
-        ...options.headers
-      }
-    });
-
-    if (!response.ok) {
-      throw new AppError(
-        'Zapier API request failed',
-        ErrorCodes.INTEGRATION_ERROR,
-        response.status
-      );
-    }
-
-    return response.json();
   }
 
   public async createWebhook(event: string): Promise<ZapierWebhook> {

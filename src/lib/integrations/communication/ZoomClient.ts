@@ -1,14 +1,14 @@
 import { VideoConferenceProvider } from './types';
 
 export class ZoomClient implements VideoConferenceProvider {
-  private apiKey: string;
-  private apiSecret: string;
+  // private apiKey: string;
+  // private apiSecret: string;
   private baseUrl = 'https://api.zoom.us/v2';
 
-  constructor(apiKey: string, apiSecret: string) {
-    this.apiKey = apiKey;
-    this.apiSecret = apiSecret;
-  }
+  // constructor(apiKey: string, apiSecret: string) {
+  //   this.apiKey = apiKey;
+  //   this.apiSecret = apiSecret;
+  // }
 
   private async getAccessToken(): Promise<string> {
     // Implement JWT generation for Zoom API

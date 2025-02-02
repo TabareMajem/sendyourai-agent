@@ -25,7 +25,7 @@ export class SchedulingAgent {
     contentId: string;
     status: 'scheduled' | 'published' | 'failed';
   }>> {
-    return this.aiAgent.queueAction('analysis', {
+    const result = await this.aiAgent.queueAction('analysis', {
       type: 'schedule_creation',
       data: {
         content: input.content,
@@ -34,6 +34,19 @@ export class SchedulingAgent {
         optimizeFor: 'engagement'
       }
     });
+
+    // Assuming the schedules are in result.payload and it's an array
+    if (result.payload && Array.isArray(result.payload)) {
+      return result.payload.map((item: any) => ({
+        date: item.date || new Date(),  // Default to current date if date is missing
+        channel: item.channel || '',  // Assuming item has a channel property
+        contentId: item.contentId || '',  // Assuming item has contentId property
+        status: item.status || 'failed'  // Default to 'failed' if status is missing
+      }));
+    }
+
+    // If result does not contain an array, return an empty array or handle the case
+    return [];
   }
 
   public async executeCampaign(campaignId: string): Promise<void> {

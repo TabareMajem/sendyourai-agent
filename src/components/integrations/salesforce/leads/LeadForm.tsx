@@ -1,4 +1,3 @@
-```typescript
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 
@@ -173,4 +172,3 @@ export function LeadForm({ onSubmit, onCancel, initialData }: LeadFormProps) {
     </div>
   );
 }
-```

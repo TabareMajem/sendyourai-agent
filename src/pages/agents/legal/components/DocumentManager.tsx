@@ -1,4 +1,3 @@
-import React from 'react';
 import { FileText, Download, Eye, Clock, Tag } from 'lucide-react';
 
 interface Document {

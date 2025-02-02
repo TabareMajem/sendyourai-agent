@@ -1,4 +1,3 @@
-import React from 'react';
 import { Lightbulb, ThumbsUp, ThumbsDown, ArrowRight } from 'lucide-react';
 
 interface Insight {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Brain, TrendingUp, ArrowUp, ArrowDown } from 'lucide-react';
 
 interface LearningMetrics {

@@ -31,19 +31,4 @@ export class LegalWorkflowManager {
     };
   }
 
-  public async handleNewClient(clientData: any) {
-    await this.clientOnboarding.processNewClient(clientData);
-  }
-
-  public async handleDocumentRequest(request: any) {
-    return this.documentDrafting.generateDocument(request);
-  }
-
-  public async handleDocumentFeedback(feedback: any) {
-    return this.documentDrafting.processClientFeedback(feedback);
-  }
-
-  public async handleDocumentSubmission(data: any) {
-    return this.clientOnboarding.processDocuments(data);
-  }
 }

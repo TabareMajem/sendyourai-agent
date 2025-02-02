@@ -1,4 +1,4 @@
-import { SchedulingProvider } from './types';
+import { SchedulingProvider } from '../types';
 
 export class CalendlyClient implements SchedulingProvider {
   private apiKey: string;
@@ -6,6 +6,24 @@ export class CalendlyClient implements SchedulingProvider {
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
+  }
+  createEvent(_data: { summary: string; description?: string; startTime: Date; endTime: Date; attendees?: string[]; location?: string; }): Promise<string> {
+    throw new Error('Method not implemented.');
+  }
+  updateEvent(_eventId: string, _data: { summary?: string; description?: string; startTime?: Date; endTime?: Date; attendees?: string[]; location?: string; }): Promise<void> {
+    throw new Error('Method not implemented.');
+  }
+  deleteEvent(_eventId: string): Promise<void> {
+    throw new Error('Method not implemented.');
+  }
+  getEvent(_eventId: string): Promise<any> {
+    throw new Error('Method not implemented.');
+  }
+  listEvents(_options?: any): Promise<any[]> {
+    throw new Error('Method not implemented.');
+  }
+  isConnected(): Promise<boolean> {
+    throw new Error('Method not implemented.');
   }
 
   private async request(endpoint: string, options: RequestInit = {}): Promise<any> {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Shield, Lock, UserCheck, FileText, AlertCircle } from 'lucide-react';
 import { Footer } from '../../components/layout/Footer';
 

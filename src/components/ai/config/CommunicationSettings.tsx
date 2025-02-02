@@ -1,8 +1,28 @@
-import React, { useState } from 'react';
-import { Mail, Bell, MessageSquare, Smartphone, AlertTriangle } from 'lucide-react';
+import { useState } from 'react';
+import { MessageSquare, Mail, Bell, Smartphone, AlertTriangle } from 'lucide-react';
+
+interface CommunicationConfig {
+  channels: {
+    inApp: boolean;
+    email: boolean;
+    push: boolean;
+    sms: boolean;
+  };
+  frequency: string;
+  urgencyLevels: {
+    low: string[];
+    medium: string[];
+    high: string[];
+  };
+  quietHours: {
+    enabled: boolean;
+    start: string;
+    end: string;
+  };
+}
 
 export function CommunicationSettings() {
-  const [config, setConfig] = useState({
+  const [config, setConfig] = useState<CommunicationConfig>({
     channels: {
       inApp: true,
       email: true,

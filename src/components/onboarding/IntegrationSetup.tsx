@@ -87,8 +87,6 @@ interface IntegrationSetupProps {
 export function IntegrationSetup({
   selectedIntegrations,
   onIntegrationsChange,
-  industry,
-  goals
 }: IntegrationSetupProps) {
   const handleToggleIntegration = (integrationId: string) => {
     const newIntegrations = selectedIntegrations.includes(integrationId)

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Calendar, Zap, Filter, CheckCircle, XCircle } from 'lucide-react';
 import { Trigger } from '../../lib/ai/types';
 import { formatTriggerType, getTriggerNextRun } from '../../lib/ai/utils/triggerUtils';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Play, Pause, Trash2, Share2, Tag } from 'lucide-react';
 
 interface WorkflowBulkActionsProps {

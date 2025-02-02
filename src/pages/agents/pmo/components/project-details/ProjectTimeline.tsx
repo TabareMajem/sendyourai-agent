@@ -1,4 +1,3 @@
-import React from 'react';
 import { Calendar, CheckCircle, Clock } from 'lucide-react';
 import { Project } from '../../../../../lib/agents/pmo/types';
 

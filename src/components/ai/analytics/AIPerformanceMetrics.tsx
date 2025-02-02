@@ -1,4 +1,3 @@
-import React from 'react';
 import { Brain, Zap, CheckCircle, AlertTriangle, Clock } from 'lucide-react';
 
 interface PerformanceMetrics {

@@ -1,5 +1,3 @@
-```typescript
-import React from 'react';
 import { Filter } from 'lucide-react';
 
 interface LeadFiltersProps {
@@ -43,4 +41,3 @@ export function LeadFilters({ filters, onChange }: LeadFiltersProps) {
     </div>
   );
 }
-```

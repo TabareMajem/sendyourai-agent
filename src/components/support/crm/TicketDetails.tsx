@@ -1,4 +1,3 @@
-```typescript
 import React, { useState } from 'react';
 import { MessageSquare, User, Clock, Tag, AlertCircle } from 'lucide-react';
 
@@ -45,7 +44,6 @@ export function TicketDetails({
   ticket,
   onUpdateStatus,
   onUpdatePriority,
-  onAssign,
   onAddComment,
   onAddTag,
   onRemoveTag
@@ -235,4 +233,4 @@ export function TicketDetails({
     </div>
   );
 }
-```
+

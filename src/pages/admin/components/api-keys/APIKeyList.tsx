@@ -1,4 +1,3 @@
-import React from 'react';
 import { Copy, Trash2 } from 'lucide-react';
 
 interface APIKey {

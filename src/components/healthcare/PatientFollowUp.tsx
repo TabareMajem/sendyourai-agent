@@ -1,5 +1,3 @@
-```typescript
-import React from 'react';
 import { Clock, MessageSquare, AlertCircle, CheckCircle } from 'lucide-react';
 
 interface FollowUpInfo {
@@ -138,4 +136,4 @@ export function PatientFollowUp({
     </div>
   );
 }
-```
+

@@ -1,5 +1,4 @@
-```typescript
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Save, Eye, Code, RefreshCw } from 'lucide-react';
 
 interface EmailTemplate {
@@ -153,4 +152,4 @@ export function EmailTemplateEditor({
     </div>
   );
 }
-```
+

@@ -1,4 +1,3 @@
-  typescript
 import { Property } from '../utils/propertyUtils';
 import { AppError, ErrorCodes } from '../../../utils/errors';
 
@@ -84,4 +83,4 @@ export class MLSService {
     return this.request(`/properties/${propertyId}/analytics`);
   }
 }
-```
+

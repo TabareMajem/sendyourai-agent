@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Send, Mic, Phone, X, MessageSquare } from 'lucide-react';
 import { Conversation } from '../../../../lib/agents/sales/types';
-import { SalesAgentManager } from '../../../../lib/agents/sales/SalesAgentManager';
 
 interface ConversationPanelProps {
   leadId: string;
@@ -13,7 +12,6 @@ export function ConversationPanel({ leadId, onClose }: ConversationPanelProps) {
   const [message, setMessage] = useState('');
   const [isRecording, setIsRecording] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const salesManager = new SalesAgentManager();
 
   useEffect(() => {
     // In a real app, fetch conversation history
@@ -49,13 +47,13 @@ export function ConversationPanel({ leadId, onClose }: ConversationPanelProps) {
     setMessage('');
 
     // Get AI response
-    const response = await salesManager.handleConversation(conversation.id, message);
+    // const response = await salesManager.handleConversation(conversation.id, message);
     
     setConversation(prev => prev ? {
       ...prev,
       messages: [...prev.messages, {
         role: 'ai',
-        content: response,
+        content: "",
         timestamp: new Date()
       }]
     } : null);

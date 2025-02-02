@@ -1,4 +1,3 @@
-```typescript
 import { loadStripe, Stripe } from '@stripe/stripe-js';
 
 export class StripeClient {
@@ -41,4 +40,3 @@ export class StripeClient {
     }
   }
 }
-```

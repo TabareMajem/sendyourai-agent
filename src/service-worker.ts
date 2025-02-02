@@ -1,4 +1,3 @@
-```typescript
 /// <reference lib="webworker" />
 
 import { precacheAndRoute } from 'workbox-precaching';
@@ -71,11 +70,11 @@ registerRoute(
 // Handle offline fallback
 self.addEventListener('fetch', (event) => {
   if (event.request.mode === 'navigate') {
-    event.respondWith(
-      fetch(event.request).catch(() => {
-        return caches.match('/offline.html');
-      })
-    );
+    // event.respondWith(
+      // fetch(event.request).catch(() => {
+      //   return caches.match('/offline.html');
+      // })
+    // );
   }
 });
 
@@ -113,9 +112,10 @@ self.addEventListener('notificationclick', (event) => {
   event.notification.close();
 
   if (event.action === 'explore') {
-    event.waitUntil(
-      clients.openWindow('/')
-    );
+    // event.waitUntil(
+      // clients.openWindow('/')
+    // );
   }
 });
-```
+
+
